@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>시각화 | This is my Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python" />
+    
+    <meta name="description" content="Matplotlib데이터 불러오기 123456789101112131415import matplotlib.pyplot as pltdates &#x3D; [    &amp;#x27;2021-01-01&amp;#x27;, &amp;#x27;2021-01-02&amp;#x27;, &amp;#x27;2021-01-03&amp;#x27;, &amp;#x27;2021-01-04&amp;#x27;, &amp;#x27;2021-01-05&amp;#x2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="시각화">
+<meta property="og:url" content="https://kjm94.github.io/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/index.html">
+<meta property="og:site_name" content="This is my Blog">
+<meta property="og:description" content="Matplotlib데이터 불러오기 123456789101112131415import matplotlib.pyplot as pltdates &#x3D; [    &amp;#x27;2021-01-01&amp;#x27;, &amp;#x27;2021-01-02&amp;#x27;, &amp;#x27;2021-01-03&amp;#x27;, &amp;#x27;2021-01-04&amp;#x27;, &amp;#x27;2021-01-05&amp;#x2">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kjm94.github.io/2021/04/07/image/output_2_0.png">
+<meta property="article:published_time" content="2021-04-07T14:02:07.000Z">
+<meta property="article:modified_time" content="2021-04-07T14:11:46.489Z">
+<meta property="article:author" content="Kwon Jung Min">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kjm94.github.io/2021/04/07/image/output_2_0.png">
+    
+
+    
+        <link rel="alternate" href="/" title="This is my Blog" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-시각화" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        시각화
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/" class="article-date">
+       <time datetime="2021-04-07T14:02:07.000Z" itemprop="datePublished">2021-04-07</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/" class="article-date">
+     <time datetime="2021-04-07T14:11:46.489Z" itemprop="dateModified">2021-04-07</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h1><p>데이터 불러오기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">dates = [</span><br><span class="line">    <span class="string">&#x27;2021-01-01&#x27;</span>, <span class="string">&#x27;2021-01-02&#x27;</span>, <span class="string">&#x27;2021-01-03&#x27;</span>, <span class="string">&#x27;2021-01-04&#x27;</span>, <span class="string">&#x27;2021-01-05&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;2021-01-06&#x27;</span>, <span class="string">&#x27;2021-01-07&#x27;</span>, <span class="string">&#x27;2021-01-08&#x27;</span>, <span class="string">&#x27;2021-01-09&#x27;</span>, <span class="string">&#x27;2021-01-10&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">min_temperature = [<span class="number">20.7</span>, <span class="number">17.9</span>, <span class="number">18.8</span>, <span class="number">14.6</span>, <span class="number">15.8</span>, <span class="number">15.8</span>, <span class="number">15.8</span>, <span class="number">17.4</span>, <span class="number">21.8</span>, <span class="number">20.0</span>]</span><br><span class="line">max_temperature = [<span class="number">34.7</span>, <span class="number">28.9</span>, <span class="number">31.8</span>, <span class="number">25.6</span>, <span class="number">28.8</span>, <span class="number">21.8</span>, <span class="number">22.8</span>, <span class="number">28.4</span>, <span class="number">30.8</span>, <span class="number">32.0</span>]</span><br><span class="line"></span><br><span class="line">fig,axes = plt.subplots(nrows=<span class="number">1</span>, ncols=<span class="number">1</span>, figsize = (<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">axes.plot(dates, min_temperature, label = <span class="string">&#x27;Min Temperature&#x27;</span>)</span><br><span class="line">axes.plot(dates, max_temperature, label = <span class="string">&#x27;Max Temperature&#x27;</span>)</span><br><span class="line">axes.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="../image/output_2_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(fig)</span><br><span class="line"><span class="built_in">print</span>(axes)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Figure(720x432)
+AxesSubplot(0.125,0.125;0.775x0.755)
+</code></pre>
+<h1 id="선-그래프"><a href="#선-그래프" class="headerlink" title="선 그래프"></a>선 그래프</h1><h1 id="pyplot-API"><a href="#pyplot-API" class="headerlink" title="pyplot API"></a>pyplot API</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fix_yahoo_finance <span class="keyword">as</span> yf</span><br><span class="line">data = yf.download(<span class="string">&#x27;AAPL&#x27;</span>, <span class="string">&#x27;2019-08-01&#x27;</span>, <span class="string">&#x27;2020-08-01&#x27;</span>)</span><br><span class="line">data.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>[*********************100%***********************]  1 of 1 downloaded
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+DatetimeIndex: 253 entries, 2019-08-01 to 2020-07-31
+Data columns (total 6 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   Open       253 non-null    float64
+ 1   High       253 non-null    float64
+ 2   Low        253 non-null    float64
+ 3   Close      253 non-null    float64
+ 4   Adj Close  253 non-null    float64
+ 5   Volume     253 non-null    int64  
+dtypes: float64(5), int64(1)
+memory usage: 13.8 KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ts = data[<span class="string">&#x27;Open&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(ts.head())</span><br></pre></td></tr></table></figure>
+
+<pre><code>Date
+2019-08-01    53.474998
+2019-08-02    51.382500
+2019-08-05    49.497501
+2019-08-06    49.077499
+2019-08-07    48.852501
+Name: Open, dtype: float64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fix_yahoo_finance <span class="keyword">as</span> yf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data = yf.download(<span class="string">&#x27;AAPL&#x27;</span>, <span class="string">&#x27;2019-08-01&#x27;</span>,<span class="string">&#x27;2020-08-01&#x27;</span>)</span><br><span class="line">ts = data[<span class="string">&#x27;Open&#x27;</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">plt.plot(ts)</span><br><span class="line">plt.legend(labels=[<span class="string">&#x27;Price&#x27;</span>], loc=<span class="string">&#x27;best&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Stock Market fluctuation of AAPL&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Date&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Stock Market Open Price&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>[*********************100%***********************]  1 of 1 downloaded
+</code></pre>
+<p><img src="../image/output_8_1.png" alt="png"></p>
+<h1 id="객체지향-API"><a href="#객체지향-API" class="headerlink" title="객체지향 API"></a>객체지향 API</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.backends.backend_agg <span class="keyword">import</span> FigureCanvasAgg <span class="keyword">as</span> FigureCanvas</span><br><span class="line"><span class="keyword">from</span> matplotlib.figure <span class="keyword">import</span> Figure</span><br><span class="line">fig = Figure()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.random.seed(<span class="number">6</span>)</span><br><span class="line">x = np.random.randn(<span class="number">20000</span>)</span><br><span class="line"></span><br><span class="line">ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">ax.hist(x, <span class="number">100</span>)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Artist Layer Histogram&#x27;</span>)</span><br><span class="line">fig.savefig(<span class="string">&#x27;Matplotlib_histogram.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fix_yahoo_finance <span class="keyword">as</span> yf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data = yf.download(<span class="string">&#x27;AAPL&#x27;</span>, <span class="string">&#x27;2019-08-01&#x27;</span>, <span class="string">&#x27;2020-08-01&#x27;</span>)</span><br><span class="line">ts = data[<span class="string">&#x27;Open&#x27;</span>]</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>,<span class="number">6</span>)) <span class="comment"># 직접 Figure 객체 생성</span></span><br><span class="line">ax = fig.subplots() <span class="comment"># 직접 axes를 생성</span></span><br><span class="line">ax.plot(ts) <span class="comment"># 생성된 axes에 대한 plot() 멤버 직접 호출</span></span><br><span class="line">ax.set_title(<span class="string">&#x27;Stock Market fluctuation of AAPL&#x27;</span>)</span><br><span class="line">ax.legend(labels=[<span class="string">&#x27;Price&#x27;</span>], loc=<span class="string">&#x27;best&#x27;</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;Data&#x27;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;Stock Market Open Price&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>[*********************100%***********************]  1 of 1 downloaded
+</code></pre>
+<p><img src="../image/output_11_1.png" alt="png"></p>
+<h1 id="막대그래프"><a href="#막대그래프" class="headerlink" title="막대그래프"></a>막대그래프</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"></span><br><span class="line">month_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]</span><br><span class="line">sold_list = [<span class="number">300</span>,<span class="number">400</span>,<span class="number">550</span>,<span class="number">900</span>,<span class="number">600</span>,<span class="number">960</span>,<span class="number">900</span>,<span class="number">910</span>,<span class="number">800</span>,<span class="number">700</span>,<span class="number">550</span>,<span class="number">450</span>]</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">plot = ax.bar(month_list, sold_list)</span><br><span class="line"></span><br><span class="line">ax.set_xticks(month_list)</span><br><span class="line">ax.set_xticklabels(calendar.month_name[<span class="number">1</span>:<span class="number">13</span>], rotation=<span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> rect <span class="keyword">in</span> plot:</span><br><span class="line">    <span class="built_in">print</span>(rect)</span><br><span class="line">    height = rect.get_height()</span><br><span class="line">    ax.text(rect.get_x() + rect.get_width()/<span class="number">2.</span>, <span class="number">1.002</span>*height, <span class="string">&#x27;%d&#x27;</span>%</span><br><span class="line">            <span class="built_in">int</span>(height), ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Rectangle(xy=(0.6, 0), width=0.8, height=300, angle=0)
+Rectangle(xy=(1.6, 0), width=0.8, height=400, angle=0)
+Rectangle(xy=(2.6, 0), width=0.8, height=550, angle=0)
+Rectangle(xy=(3.6, 0), width=0.8, height=900, angle=0)
+Rectangle(xy=(4.6, 0), width=0.8, height=600, angle=0)
+Rectangle(xy=(5.6, 0), width=0.8, height=960, angle=0)
+Rectangle(xy=(6.6, 0), width=0.8, height=900, angle=0)
+Rectangle(xy=(7.6, 0), width=0.8, height=910, angle=0)
+Rectangle(xy=(8.6, 0), width=0.8, height=800, angle=0)
+Rectangle(xy=(9.6, 0), width=0.8, height=700, angle=0)
+Rectangle(xy=(10.6, 0), width=0.8, height=550, angle=0)
+Rectangle(xy=(11.6, 0), width=0.8, height=450, angle=0)
+</code></pre>
+<p><img src="../image/output_13_1.png" alt="png"></p>
+<h1 id="산점도-그래프"><a href="#산점도-그래프" class="headerlink" title="산점도 그래프"></a>산점도 그래프</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">&quot;tips&quot;</span>)</span><br><span class="line">x = tips[<span class="string">&#x27;total_bill&#x27;</span>]</span><br><span class="line">y = tips[<span class="string">&#x27;tip&#x27;</span>]</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">ax.scatter(x, y)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;Total Bill&#x27;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;Tip&#x27;</span>)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Tip ~ Total Bill&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="../image/output_15_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label, data = tips.groupby(<span class="string">&#x27;sex&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tips[<span class="string">&#x27;sex_color&#x27;</span>] = tips[<span class="string">&#x27;sex&#x27;</span>].<span class="built_in">map</span>(&#123;<span class="string">&quot;Female&quot;</span> : <span class="string">&quot;#0000FF&quot;</span>, <span class="string">&quot;Male&quot;</span> : <span class="string">&quot;#00FF00&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> label, data <span class="keyword">in</span> tips.groupby(<span class="string">&#x27;sex&#x27;</span>):</span><br><span class="line">    ax.scatter(data[<span class="string">&#x27;total_bill&#x27;</span>], data[<span class="string">&#x27;tip&#x27;</span>], label=label,</span><br><span class="line">               color=data[<span class="string">&#x27;sex_color&#x27;</span>], alpha=<span class="number">0.5</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">&#x27;Total Bill&#x27;</span>)</span><br><span class="line">    ax.set_ylabel(<span class="string">&#x27;Tip&#x27;</span>)</span><br><span class="line">    ax.set_title(<span class="string">&#x27;Tip ~ Total Bill by Gender&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax.legend()</span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="../image/output_17_0.png" alt="png"></p>
+<h1 id="히스토그램"><a href="#히스토그램" class="headerlink" title="히스토그램"></a>히스토그램</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">titanic = sns.load_dataset(<span class="string">&#x27;titanic&#x27;</span>)</span><br><span class="line">age = titanic[<span class="string">&#x27;age&#x27;</span>]</span><br><span class="line"></span><br><span class="line">nbins = <span class="number">21</span></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#histogram</span></span><br><span class="line">ax.hist(age, bins= nbins)</span><br><span class="line">ax.set_xlabel(<span class="string">&quot;Age&quot;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&quot;Frequency&quot;</span>)</span><br><span class="line">ax.set_title(<span class="string">&quot;Distribution of Aae in Titanic&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#vline</span></span><br><span class="line">ax.axvline(x = age.mean(), linewidth = <span class="number">2</span>, color = <span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="../image/output_19_0.png" alt="png"></p>
+<h1 id="박스플롯"><a href="#박스플롯" class="headerlink" title="박스플롯"></a>박스플롯</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">iris = sns.load_dataset(<span class="string">&#x27;iris&#x27;</span>)</span><br><span class="line"></span><br><span class="line">data = [iris[iris[<span class="string">&#x27;species&#x27;</span>]==<span class="string">&#x27;setosa&#x27;</span>][<span class="string">&#x27;petal_width&#x27;</span>],</span><br><span class="line">        iris[iris[<span class="string">&#x27;species&#x27;</span>]==<span class="string">&#x27;versicolor&#x27;</span>][<span class="string">&#x27;petal_width&#x27;</span>],</span><br><span class="line">        iris[iris[<span class="string">&#x27;species&#x27;</span>]==<span class="string">&#x27;virginica&#x27;</span>][<span class="string">&#x27;petal_width&#x27;</span>],]</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">ax.boxplot(data, labels=[<span class="string">&#x27;setosa&#x27;</span>, <span class="string">&#x27;versicolor&#x27;</span>, <span class="string">&#x27;virginica&#x27;</span>])</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="../image/output_21_0.png" alt="png"></p>
+<h1 id="히트맵"><a href="#히트맵" class="headerlink" title="히트맵"></a>히트맵</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">flights = sns.load_dataset(<span class="string">&#x27;flights&#x27;</span>)</span><br><span class="line">flights = flights.pivot(<span class="string">&quot;month&quot;</span>,<span class="string">&quot;year&quot;</span>,<span class="string">&quot;passengers&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(flights)</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">6</span>))</span><br><span class="line">im = ax.imshow(flights, cmap = <span class="string">&#x27;YlGnBu&#x27;</span>)</span><br><span class="line">ax.set_xticklabels(flights.columns, rotation = <span class="number">20</span>)</span><br><span class="line">ax.set_yticklabels(flights.index, rotation = <span class="number">10</span>)</span><br><span class="line">fig.colorbar(im)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>year   1949  1950  1951  1952  1953  1954  1955  1956  1957  1958  1959  1960
+month                                                                        
+Jan     112   115   145   171   196   204   242   284   315   340   360   417
+Feb     118   126   150   180   196   188   233   277   301   318   342   391
+Mar     132   141   178   193   236   235   267   317   356   362   406   419
+Apr     129   135   163   181   235   227   269   313   348   348   396   461
+May     121   125   172   183   229   234   270   318   355   363   420   472
+Jun     135   149   178   218   243   264   315   374   422   435   472   535
+Jul     148   170   199   230   264   302   364   413   465   491   548   622
+Aug     148   170   199   242   272   293   347   405   467   505   559   606
+Sep     136   158   184   209   237   259   312   355   404   404   463   508
+Oct     119   133   162   191   211   229   274   306   347   359   407   461
+Nov     104   114   146   172   180   203   237   271   305   310   362   390
+Dec     118   140   166   194   201   229   278   306   336   337   405   432
+</code></pre>
+<p><img src="../image/output_23_1.png" alt="png"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://kjm94.github.io/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/" data-id="ckn7j9hkl001az4uz01zvhumi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Kwon Jung Min"
+        },
+        "headline": "시각화",
+        "image": "https://KJM94.github.io../image/output_2_0.png",
+        "keywords": "python",
+        "genre": "",
+        "datePublished": "2021-04-07",
+        "dateCreated": "2021-04-07",
+        "dateModified": "2021-04-07",
+        "url": "https://KJM94.github.io/2021/04/07/시각화/",
+        "description": "Matplotlib데이터 불러오기
+123456789101112131415import matplotlib.pyplot as pltdates = [    &#x27;2021-01-01&#x27;, &#x27;2021-01-02&#x27;, &#x27;2021-01-03&#x27;, &#x27;2021-01-04&#x27;, &#x27;2021-01-05&#x2",
+        "wordCount": 1790
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KJM94" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/04/07/Pandas10min/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Pandas10min
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/04/06/List-and-tuple/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">List and tuple</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/07/Pandas10min/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../image/output_147_1.png)" alt="Pandas10min" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/07/Pandas10min/" class="title">Pandas10min</a></p>
+                            <p class="item-date"><time datetime="2021-04-07T14:07:07.000Z" itemprop="datePublished">2021-04-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../image/output_2_0.png)" alt="시각화" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/" class="title">시각화</a></p>
+                            <p class="item-date"><time datetime="2021-04-07T14:02:07.000Z" itemprop="datePublished">2021-04-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/06/List-and-tuple/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/06/List-and-tuple/" class="title">List and tuple</a></p>
+                            <p class="item-date"><time datetime="2021-04-06T03:19:17.000Z" itemprop="datePublished">2021-04-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/04/%EC%BB%B4%ED%93%A8%ED%84%B0-%EA%B3%B5%ED%95%99-%EC%9E%85%EB%AC%B8-%EC%88%98%EB%A3%8C%EC%A6%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/04/%EC%BB%B4%ED%93%A8%ED%84%B0-%EA%B3%B5%ED%95%99-%EC%9E%85%EB%AC%B8-%EC%88%98%EB%A3%8C%EC%A6%9D/" class="title">컴퓨터 공학 입문 수료증</a></p>
+                            <p class="item-date"><time datetime="2021-04-04T13:30:59.000Z" itemprop="datePublished">2021-04-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/03/R-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%A6%AC-%EC%8B%9C%EA%B0%81%ED%99%94-%EC%97%B0%EC%8A%B5-%EC%BD%94%EB%93%9C/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/03/R-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%A6%AC-%EC%8B%9C%EA%B0%81%ED%99%94-%EC%97%B0%EC%8A%B5-%EC%BD%94%EB%93%9C/" class="title">R 데이터 정리, 시각화 연습 코드</a></p>
+                            <p class="item-date"><time datetime="2021-04-03T04:23:08.000Z" itemprop="datePublished">2021-04-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 17.5px;">C++</a> <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/python/" style="font-size: 15px;">python</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Kwon Jung Min</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://kjm94.github.io/2021/04/07/%EC%8B%9C%EA%B0%81%ED%99%94/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
