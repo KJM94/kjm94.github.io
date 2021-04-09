@@ -12,15 +12,15 @@
     
     <meta name="keywords" content="python" />
     
-    <meta name="description" content="데이터 수집 2) 시각화 3) 기초통계 : Feature Engineering  Feature Engineering 이상치 처리, 중복값 제거 결측치 확인 : 1) 결측치 제거 : 2) 결측치 채우기  중간값, 빈도수 값 많은 것 넣기 Imputation: 3) 결측치 도메인 활용  왜도처리(Skewnewss) 도출 변수 Label Encoding –&amp;g">
+    <meta name="description" content="데이터 수집 시각화 -&gt; 변수 간의 조합 기초통계 : Feature Engineering  Feature Engineering  이상치 처리, 중복값 제거, 문자 데이터 –&gt; 수치 (인코딩)  정규화, 표준화, 도출 변수 및 불필요한 삭제  PCA(차원 축소),EFA  결측치 확인  : 1) 결측치 제거  : 2) 결측치 채우기   - 중간값,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Feature Engineering">
 <meta property="og:url" content="https://kjm94.github.io/2021/04/08/Feature-Engineering/index.html">
 <meta property="og:site_name" content="This is my Blog">
-<meta property="og:description" content="데이터 수집 2) 시각화 3) 기초통계 : Feature Engineering  Feature Engineering 이상치 처리, 중복값 제거 결측치 확인 : 1) 결측치 제거 : 2) 결측치 채우기  중간값, 빈도수 값 많은 것 넣기 Imputation: 3) 결측치 도메인 활용  왜도처리(Skewnewss) 도출 변수 Label Encoding –&amp;g">
+<meta property="og:description" content="데이터 수집 시각화 -&gt; 변수 간의 조합 기초통계 : Feature Engineering  Feature Engineering  이상치 처리, 중복값 제거, 문자 데이터 –&gt; 수치 (인코딩)  정규화, 표준화, 도출 변수 및 불필요한 삭제  PCA(차원 축소),EFA  결측치 확인  : 1) 결측치 제거  : 2) 결측치 채우기   - 중간값,">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-08T12:48:11.000Z">
-<meta property="article:modified_time" content="2021-04-08T12:48:39.915Z">
+<meta property="article:modified_time" content="2021-04-09T13:32:38.755Z">
 <meta property="article:author" content="Kwon Jung Min">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -182,7 +182,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/04/08/Feature-Engineering/" class="article-date">
-     <time datetime="2021-04-08T12:48:39.915Z" itemprop="dateModified">2021-04-08</time>
+     <time datetime="2021-04-09T13:32:38.755Z" itemprop="dateModified">2021-04-09</time>
   </a>
 </div>
 
@@ -210,24 +210,52 @@
             
 
             <ol>
-<li>데이터 수집 2) 시각화 3) 기초통계 : Feature Engineering</li>
+<li>데이터 수집</li>
+<li>시각화<br> -&gt; 변수 간의 조합</li>
+<li>기초통계 : Feature Engineering</li>
 </ol>
 <p>Feature Engineering</p>
-<p>이상치 처리, 중복값 제거</p>
-<p>결측치 확인 : 1) 결측치 제거 : 2) 결측치 채우기</p>
 <ul>
-<li>중간값, 빈도수 값 많은 것 넣기</li>
-<li>Imputation<br>: 3) 결측치 도메인 활용</li>
+<li><p>이상치 처리, 중복값 제거, 문자 데이터 –&gt; 수치 (인코딩)</p>
+</li>
+<li><p>정규화, 표준화, 도출 변수 및 불필요한 삭제</p>
+</li>
+<li><p>PCA(차원 축소),EFA</p>
+</li>
+<li><p>결측치 확인<br>  : 1) 결측치 제거<br>  : 2) 결측치 채우기</p>
+<pre><code>  - 중간값, 빈도수 값 많은 것 넣기
+  - Imputation
+</code></pre>
+<p>  : 3) 결측치 도메인 활용</p>
+</li>
+<li><p>왜도처리(Skewnewss)</p>
+</li>
+<li><p>도출 변수</p>
+</li>
+<li><p>Label Encoding –&gt; 종속변수에만 사용</p>
+</li>
+<li><p>Ordinal Encoding –&gt; 독립변수에만 사용</p>
+</li>
+<li><p>-&gt; 문자를 숫자로 바꿈</p>
+</li>
+<li><p>-&gt; Default, 가~하, A-Z 순으로 숫자 바뀜</p>
+</li>
+<li><p>-&gt; 순서형</p>
+</li>
+<li><p>One - Hot Encoding –&gt; 독립변수에만 사용</p>
+</li>
+<li><p>-&gt; 명목형</p>
+</li>
 </ul>
-<p>왜도처리(Skewnewss)</p>
-<p>도출 변수</p>
-<p>Label Encoding –&gt; 종속변수에만 사용</p>
-<p>Ordinal Encoding –&gt; 독립변수에만 사용</p>
-<p>-&gt; 문자를 숫자로 바꿈</p>
-<p>-&gt; Default, 가~하, A-Z 순으로 숫자 바뀜</p>
-<p>-&gt; 순서형</p>
-<p>One - Hot Encoding –&gt; 독립변수에만 사용</p>
-<p>-&gt; 명목형</p>
+<ol start="4">
+<li>훈련 데이터 / 테스트 데이터</li>
+<li>모형 학습 (다양한 모형 공부 필요)</li>
+<li>예측 결과</li>
+<li>예측 결과 평가</li>
+<li>최종 모델 선정 및 최종 예측 결과</li>
+<li>캐글 대회 제출</li>
+</ol>
+<p>–&gt; 주 목적, 예측 정확성 향상상) 최종 모델 선정 및 최종 예측 결과<br>9) 캐글 대회 제출<br>–&gt; 주 목적, 예측 정확성 향상</p>
 
         </div>
         <footer class="article-footer">
@@ -235,7 +263,7 @@
 
 
 
-    <a data-url="https://kjm94.github.io/2021/04/08/Feature-Engineering/" data-id="ckn8vn4mq0001xguz8o6pf5jk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://kjm94.github.io/2021/04/08/Feature-Engineering/" data-id="cknacnapn00008cuzbb7r0jv0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -311,22 +339,24 @@
         "genre": "",
         "datePublished": "2021-04-08",
         "dateCreated": "2021-04-08",
-        "dateModified": "2021-04-08",
+        "dateModified": "2021-04-09",
         "url": "https://KJM94.github.io/2021/04/08/Feature-Engineering/",
         "description": "
-데이터 수집 2) 시각화 3) 기초통계 : Feature Engineering
+데이터 수집
+시각화 -&gt; 변수 간의 조합
+기초통계 : Feature Engineering
 
 Feature Engineering
-이상치 처리, 중복값 제거
-결측치 확인 : 1) 결측치 제거 : 2) 결측치 채우기
 
-중간값, 빈도수 값 많은 것 넣기
-Imputation: 3) 결측치 도메인 활용
+이상치 처리, 중복값 제거, 문자 데이터 –&gt; 수치 (인코딩)
 
-왜도처리(Skewnewss)
-도출 변수
-Label Encoding –&g",
-        "wordCount": 57
+정규화, 표준화, 도출 변수 및 불필요한 삭제
+
+PCA(차원 축소),EFA
+
+결측치 확인  : 1) 결측치 제거  : 2) 결측치 채우기
+  - 중간값,",
+        "wordCount": 120
     }
 </script>
 
