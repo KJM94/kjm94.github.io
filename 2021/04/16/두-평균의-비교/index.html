@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>두 평균의 비교 | This is my Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="R" />
+    
+    <meta name="description" content="두 평균의 비교T 검정과 T분포 T검정의 정의  T검정은 모집단의 분산이나 표준편차를 알지 못할 때, 모집단에서 얻은 표본으로부터 추정된 분산이나 추정된 표준편차를 가지고 T분포에 의거하여 검정하는 방법  T분포  자유도에 따라 형태가 달라지는 가족분포이며 평균이 0이고 좌우대칭의 분포인 정규분포이고 표준편차가 1보다 큰 분포 자유도에 따른 T분포의 형태는">
+<meta property="og:type" content="article">
+<meta property="og:title" content="두 평균의 비교">
+<meta property="og:url" content="https://kjm94.github.io/2021/04/16/%EB%91%90-%ED%8F%89%EA%B7%A0%EC%9D%98-%EB%B9%84%EA%B5%90/index.html">
+<meta property="og:site_name" content="This is my Blog">
+<meta property="og:description" content="두 평균의 비교T 검정과 T분포 T검정의 정의  T검정은 모집단의 분산이나 표준편차를 알지 못할 때, 모집단에서 얻은 표본으로부터 추정된 분산이나 추정된 표준편차를 가지고 T분포에 의거하여 검정하는 방법  T분포  자유도에 따라 형태가 달라지는 가족분포이며 평균이 0이고 좌우대칭의 분포인 정규분포이고 표준편차가 1보다 큰 분포 자유도에 따른 T분포의 형태는">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-16T06:08:58.000Z">
+<meta property="article:modified_time" content="2021-04-17T06:39:54.443Z">
+<meta property="article:author" content="Kwon Jung Min">
+<meta property="article:tag" content="R">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/" title="This is my Blog" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-두-평균의-비교" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        두 평균의 비교
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/04/16/%EB%91%90-%ED%8F%89%EA%B7%A0%EC%9D%98-%EB%B9%84%EA%B5%90/" class="article-date">
+       <time datetime="2021-04-16T06:08:58.000Z" itemprop="datePublished">2021-04-16</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/04/16/%EB%91%90-%ED%8F%89%EA%B7%A0%EC%9D%98-%EB%B9%84%EA%B5%90/" class="article-date">
+     <time datetime="2021-04-17T06:39:54.443Z" itemprop="dateModified">2021-04-17</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/R/" rel="tag">R</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="두-평균의-비교"><a href="#두-평균의-비교" class="headerlink" title="두 평균의 비교"></a>두 평균의 비교</h1><h2 id="T-검정과-T분포"><a href="#T-검정과-T분포" class="headerlink" title="T 검정과 T분포"></a>T 검정과 T분포</h2><ul>
+<li>T검정의 정의</li>
+</ul>
+<p>T검정은 모집단의 분산이나 표준편차를 알지 못할 때, 모집단에서 얻은 표본으로부터 추정된 분산이나 추정된 표준편차를 가지고 T분포에 의거하여 검정하는 방법</p>
+<ul>
+<li>T분포</li>
+</ul>
+<p>자유도에 따라 형태가 달라지는 가족분포이며 평균이 0이고 좌우대칭의 분포인 정규분포이고 표준편차가 1보다 큰 분포</p>
+<p>자유도에 따른 T분포의 형태는 자유도의 값이 커질수록 즉 무한루프에 가까우면 T분포는 표준정규분포 즉 Z분포에 가까워지게 됨</p>
+<h2 id="단일표본-T검정"><a href="#단일표본-T검정" class="headerlink" title="단일표본 T검정"></a>단일표본 T검정</h2><ul>
+<li>모집단의 분산을 알지 못할 때, 모집단에서 추출된 표본의 평균과 연구자가 이론적, 경험적 배경으로 설정한 수를 비교 검정하는 방법</li>
+</ul>
+<h2 id="독립표본-T-검정"><a href="#독립표본-T-검정" class="headerlink" title="독립표본 T 검정"></a>독립표본 T 검정</h2><ul>
+<li>각기 다른 두 모집단의 속성인 평균을 비교하기 위하여 두 모집단으로부터 표본들을 각각 독립적으로 추출한 후, 각 표본의 평균들을 비교해서 모집단의 유사성을 검정하는 방법.</li>
+</ul>
+<h2 id="대응표본-T검정"><a href="#대응표본-T검정" class="headerlink" title="대응표본 T검정"></a>대응표본 T검정</h2><ul>
+<li>알지 못하는 각기 다른 두 모집단의 속성인 평균을 비교하기 위하여 두 모집단으로부터 표본들을 추출하여 표본의 평균들을 비교함으로써 모집단의 평균을 비교하는 통계적 방법.</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://kjm94.github.io/2021/04/16/%EB%91%90-%ED%8F%89%EA%B7%A0%EC%9D%98-%EB%B9%84%EA%B5%90/" data-id="cknldj85l0005f4uz466o21ra" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Kwon Jung Min"
+        },
+        "headline": "두 평균의 비교",
+        "image": "https://KJM94.github.io",
+        "keywords": "R",
+        "genre": "",
+        "datePublished": "2021-04-16",
+        "dateCreated": "2021-04-16",
+        "dateModified": "2021-04-17",
+        "url": "https://KJM94.github.io/2021/04/16/두-평균의-비교/",
+        "description": "두 평균의 비교T 검정과 T분포
+T검정의 정의
+
+T검정은 모집단의 분산이나 표준편차를 알지 못할 때, 모집단에서 얻은 표본으로부터 추정된 분산이나 추정된 표준편차를 가지고 T분포에 의거하여 검정하는 방법
+
+T분포
+
+자유도에 따라 형태가 달라지는 가족분포이며 평균이 0이고 좌우대칭의 분포인 정규분포이고 표준편차가 1보다 큰 분포
+자유도에 따른 T분포의 형태는",
+        "wordCount": 144
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/04/16/%EC%83%81%EA%B4%80%EB%B6%84%EC%84%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            상관분석
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/04/16/%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">가설 설정</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/17/%EC%84%B1%EB%8A%A5-%EC%B8%A1%EC%A0%95/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/17/%EC%84%B1%EB%8A%A5-%EC%B8%A1%EC%A0%95/" class="title">성능 측정</a></p>
+                            <p class="item-date"><time datetime="2021-04-17T06:40:38.000Z" itemprop="datePublished">2021-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%EC%9E%90%EB%A3%8C/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%EC%9E%90%EB%A3%8C/" class="title">기초통계 자료</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T07:58:39.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1-%ED%9A%8C%EA%B7%80/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1-%ED%9A%8C%EA%B7%80/" class="title">로지스틱 회귀</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T07:44:44.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/ii%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/ii%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" class="title">회귀분석</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T06:55:45.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/%EC%83%81%EA%B4%80%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/%EC%83%81%EA%B4%80%EB%B6%84%EC%84%9D/" class="title">상관분석</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T06:51:55.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Kwon Jung Min</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://kjm94.github.io/2021/04/16/%EB%91%90-%ED%8F%89%EA%B7%A0%EC%9D%98-%EB%B9%84%EA%B5%90/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

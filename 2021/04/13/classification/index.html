@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>classification | This is my Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python" />
+    
+    <meta name="description" content="설정 matplotlib 그래프를 인라인으로 출력 그림을 저장하는 함수  12345678910111213141516171819202122232425262728293031323334353637383940# 파이썬 ≥3.5 필수import sysassert sys.version_info &gt;&#x3D; (3, 5)# 사이킷런 ≥0.20 필수import sklearn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="classification">
+<meta property="og:url" content="https://kjm94.github.io/2021/04/13/classification/index.html">
+<meta property="og:site_name" content="This is my Blog">
+<meta property="og:description" content="설정 matplotlib 그래프를 인라인으로 출력 그림을 저장하는 함수  12345678910111213141516171819202122232425262728293031323334353637383940# 파이썬 ≥3.5 필수import sysassert sys.version_info &gt;&#x3D; (3, 5)# 사이킷런 ≥0.20 필수import sklearn">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kjm94.github.io/2021/04/13/image/output_9_1.png">
+<meta property="article:published_time" content="2021-04-13T07:58:58.000Z">
+<meta property="article:modified_time" content="2021-04-17T06:39:54.425Z">
+<meta property="article:author" content="Kwon Jung Min">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kjm94.github.io/2021/04/13/image/output_9_1.png">
+    
+
+    
+        <link rel="alternate" href="/" title="This is my Blog" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-classification" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        classification
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/04/13/classification/" class="article-date">
+       <time datetime="2021-04-13T07:58:58.000Z" itemprop="datePublished">2021-04-13</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/04/13/classification/" class="article-date">
+     <time datetime="2021-04-17T06:39:54.425Z" itemprop="dateModified">2021-04-17</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h1><ul>
+<li>matplotlib 그래프를 인라인으로 출력</li>
+<li>그림을 저장하는 함수</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 파이썬 ≥3.5 필수</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> sys.version_info &gt;= (<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 사이킷런 ≥0.20 필수</span></span><br><span class="line"><span class="keyword">import</span> sklearn</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> sklearn.__version__ &gt;= <span class="string">&quot;0.20&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 공통 모듈 임포트</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 노트북 실행 결과를 동일하게 유지하기 위해</span></span><br><span class="line">np.random.seed(<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 깔끔한 그래프 출력을 위해</span></span><br><span class="line">% matplotlib</span><br><span class="line">inline</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">mpl.rc(<span class="string">&#x27;axes&#x27;</span>, labelsize=<span class="number">14</span>)</span><br><span class="line">mpl.rc(<span class="string">&#x27;xtick&#x27;</span>, labelsize=<span class="number">12</span>)</span><br><span class="line">mpl.rc(<span class="string">&#x27;ytick&#x27;</span>, labelsize=<span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 그림을 저장할 위치</span></span><br><span class="line">PROJECT_ROOT_DIR = <span class="string">&quot;../../../classification&quot;</span></span><br><span class="line">CHAPTER_ID = <span class="string">&quot;classification&quot;</span></span><br><span class="line">IMAGES_PATH = os.path.join(PROJECT_ROOT_DIR, <span class="string">&quot;images&quot;</span>, CHAPTER_ID)</span><br><span class="line">os.makedirs(IMAGES_PATH, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_fig</span>(<span class="params">fig_id, tight_layout=<span class="literal">True</span>, fig_extension=<span class="string">&quot;png&quot;</span>, resolution=<span class="number">300</span></span>):</span></span><br><span class="line">    path = os.path.join(IMAGES_PATH, fig_id + <span class="string">&quot;.&quot;</span> + fig_extension)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;그림 저장:&quot;</span>, fig_id)</span><br><span class="line">    <span class="keyword">if</span> tight_layout:</span><br><span class="line">        plt.tight_layout()</span><br><span class="line">    plt.savefig(path, <span class="built_in">format</span>=fig_extension, dpi=resolution)</span><br></pre></td></tr></table></figure>
+
+<h1 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h1><ul>
+<li>손으로 쓴 7만개의 숫자 이미지를 모은 데이터셋</li>
+</ul>
+<p>MNIST 데이터셋 내려받는 코드</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_openml</span><br><span class="line">mnist = fetch_openml(<span class="string">&#x27;mnist_784&#x27;</span>, version=<span class="number">1</span>, as_frame=<span class="literal">False</span>)</span><br><span class="line">mnist.keys()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;frame&#39;, &#39;feature_names&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;details&#39;, &#39;categories&#39;, &#39;url&#39;])
+</code></pre>
+<p>사이킷런에서 읽어 들인 데이터셋들은 딕셔너리 구조를 갖고 있음.</p>
+<ul>
+<li>데이터셋을 설명하는 DESCR 키</li>
+<li>샘플이 하나의 행, 특성이 하나의 열로 구성된 배열을 가진 data 키</li>
+<li>레이블 배열을 담은 target 키</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X, y = mnist[<span class="string">&quot;data&quot;</span>], mnist[<span class="string">&quot;target&quot;</span>]</span><br><span class="line">X.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(70000, 784)
+</code></pre>
+<p>이미지가 7만개 있고 각 784개의 특성을 갖고 있음.<br>이미지가 28 x 28 픽셀이기 때문<br>특성은 0~255까지의 픽셀 강도를 나타냄.</p>
+<p>이미지 한개 확인하기</p>
+<ul>
+<li>샘플의 특성 벡터를 추출해서 28 x 28 배열로 크기를 바꾸고 matplotlib의 imshow() 함수를 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y.shape</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(70000,)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">28</span> * <span class="number">28</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>784
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">some_digit = X[<span class="number">0</span>]</span><br><span class="line">some_digit_image = some_digit.reshape(<span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">plt.imshow(some_digit_image, cmap=mpl.cm.binary)</span><br><span class="line">plt.axis(<span class="string">&quot;off&quot;</span>)</span><br><span class="line"></span><br><span class="line">save_fig(<span class="string">&quot;some_digit_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: some_digit_plot
+</code></pre>
+<p><img src="../image/output_9_1.png" alt="png"></p>
+<p>숫자 5 이미지의 실제 레이블</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;5&#39;
+</code></pre>
+<p>레이블은 문자열이며, 머신러닝 알고리즘은 숫자 인식이 필요하기 때문에 y를 정수로 변환함.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y = y.astype(np.uint8)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_digit</span>(<span class="params">data</span>):</span></span><br><span class="line">    image = data.reshape(<span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">    plt.imshow(image, cmap = mpl.cm.binary,</span><br><span class="line">               interpolation=<span class="string">&quot;nearest&quot;</span>)</span><br><span class="line">    plt.axis(<span class="string">&quot;off&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 숫자 그림을 위한 함수</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_digits</span>(<span class="params">instances, images_per_row=<span class="number">10</span>, **options</span>):</span></span><br><span class="line">    size = <span class="number">28</span></span><br><span class="line">    images_per_row = <span class="built_in">min</span>(<span class="built_in">len</span>(instances), images_per_row)</span><br><span class="line">    images = [instance.reshape(size,size) <span class="keyword">for</span> instance <span class="keyword">in</span> instances]</span><br><span class="line">    n_rows = (<span class="built_in">len</span>(instances) - <span class="number">1</span>) // images_per_row + <span class="number">1</span></span><br><span class="line">    row_images = []</span><br><span class="line">    n_empty = n_rows * images_per_row - <span class="built_in">len</span>(instances)</span><br><span class="line">    images.append(np.zeros((size, size * n_empty)))</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(n_rows):</span><br><span class="line">        rimages = images[row * images_per_row : (row + <span class="number">1</span>) * images_per_row]</span><br><span class="line">        row_images.append(np.concatenate(rimages, axis=<span class="number">1</span>))</span><br><span class="line">    image = np.concatenate(row_images, axis=<span class="number">0</span>)</span><br><span class="line">    plt.imshow(image, cmap = mpl.cm.binary, **options)</span><br><span class="line">    plt.axis(<span class="string">&quot;off&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">9</span>,<span class="number">9</span>))</span><br><span class="line">example_images = X[:<span class="number">100</span>]</span><br><span class="line">plot_digits(example_images, images_per_row=<span class="number">10</span>)</span><br><span class="line">save_fig(<span class="string">&quot;more_digits_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: more_digits_plot
+</code></pre>
+<p><img src="../image/output_16_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>5
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X_train, X_test, y_train, y_test = X[:<span class="number">60000</span>],X[<span class="number">60000</span>:],y[:<span class="number">60000</span>],y[<span class="number">60000</span>:]</span><br></pre></td></tr></table></figure>
+
+<h1 id="이진-분류기"><a href="#이진-분류기" class="headerlink" title="이진 분류기"></a>이진 분류기</h1><p>ex) 숫자 5만 식별하기<br>5와 5가 아닌 것 두개의 클래스를 구분 하는 것</p>
+<p>타깃 벡터 만들기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_train_5 = (y_train == <span class="number">5</span>)</span><br><span class="line">y_test_5 = (y_test == <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>max_iter와 tol 같은 일부 매개변수는 사이킷런 다음 버전에서 기본값이 바뀝니다. 버전이 업데이트 되더라도 결과가 바뀌지 않도록 아예 나중에 바뀔 기본값을 사용해 명시적으로 지정합니다.</p>
+<h2 id="확률적-경사-하강법"><a href="#확률적-경사-하강법" class="headerlink" title="확률적 경사 하강법"></a>확률적 경사 하강법</h2><p>Stochastic Gradient Descent (SGD)</p>
+<ul>
+<li>매우 큰 데이터셋을 효율적으로 처리하는 방법</li>
+<li>한 번에 하나씩 훈련 샘플을 독립적으로 처리함.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line"></span><br><span class="line">sgd_clf = SGDClassifier(max_iter=<span class="number">1000</span>, tol=<span class="number">1e-3</span>, random_state=<span class="number">42</span>)</span><br><span class="line">sgd_clf.fit(X_train, y_train_5)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.0, fit_intercept=True,
+              l1_ratio=0.15, learning_rate=&#39;optimal&#39;, loss=&#39;hinge&#39;,
+              max_iter=1000, n_iter_no_change=5, n_jobs=None, penalty=&#39;l2&#39;,
+              power_t=0.5, random_state=42, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+</code></pre>
+<p>숫자 5 이미지 감지</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgd_clf.predict([some_digit])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([ True])
+</code></pre>
+<p>분류기가 해당하는 이미지가 5를 나타낸다고 추측함.(True)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score</span><br><span class="line">cross_val_score(sgd_clf, X_train, y_train_5, cv=<span class="number">3</span>, scoring=<span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0.95035, 0.96035, 0.9604 ])
+</code></pre>
+<h1 id="성능-측정"><a href="#성능-측정" class="headerlink" title="성능 측정"></a>성능 측정</h1><h2 id="교차-검증을-사용한-정확도-측정"><a href="#교차-검증을-사용한-정확도-측정" class="headerlink" title="교차 검증을 사용한 정확도 측정"></a>교차 검증을 사용한 정확도 측정</h2><ul>
+<li>교차 검증 구현</li>
+</ul>
+<p>다음 코드는 사이킷런의 cross_val_score()함수와 거의 같은 작업을 수행하는 코드입니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line"><span class="keyword">from</span> sklearn.base <span class="keyword">import</span> clone</span><br><span class="line"></span><br><span class="line"><span class="comment"># shuffle=False가 기본값이기 때문에 random_state를 삭제하던지 shuffle=True로 지정하라는 경고가 발생합니다.</span></span><br><span class="line"><span class="comment"># 0.24버전부터는 에러가 발생하니 shuffle=True을 지정</span></span><br><span class="line">skfolds = StratifiedKFold(n_splits=<span class="number">3</span>, random_state=<span class="number">42</span>, shuffle=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> train_index, test_index <span class="keyword">in</span> skfolds.split(X_train, y_train_5):</span><br><span class="line">    clone_clf = clone(sgd_clf)</span><br><span class="line">    X_train_folds = X_train[train_index]</span><br><span class="line">    y_train_folds = y_train_5[train_index]</span><br><span class="line">    X_test_folds = X_train[train_index]</span><br><span class="line">    y_test_folds = y_train_5[train_index]</span><br><span class="line"></span><br><span class="line">    clone_clf.fit(X_train_folds, y_train_folds)</span><br><span class="line">    y_pred = clone_clf.predict(X_test_folds)</span><br><span class="line">    n_correct = <span class="built_in">sum</span>(y_pred == y_test_folds)</span><br><span class="line">    <span class="built_in">print</span>(n_correct / <span class="built_in">len</span>(y_pred))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.9705
+0.91645
+0.9715
+</code></pre>
+<p>StractifiedFold</p>
+<ul>
+<li>클래스별 비율이 유지되도록 폴드를 만들기 위해 계층적 샘플링 수행</li>
+<li>매 반복에서 분류기 객체를 복제하여 훈련 폴드로 훈련시키고 테스트 폴드로 예측을 만듦</li>
+<li>올바른 예측의 수를 세어 정확한 예측의 비율 출력</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.base <span class="keyword">import</span> BaseEstimator</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Never5Classifier</span>(<span class="params">BaseEstimator</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit</span>(<span class="params">self, X, y=<span class="literal">None</span></span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        <span class="keyword">return</span> np.zeros((<span class="built_in">len</span>(X), <span class="number">1</span>), dtype=<span class="built_in">bool</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">never_5_clf = Never5Classifier()</span><br><span class="line">cross_val_score(never_5_clf, X_train, y_train_5, cv=<span class="number">3</span>, scoring=<span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0.91125, 0.90855, 0.90915])
+</code></pre>
+<ul>
+<li>정확도가 90% 이상으로 나옴</li>
+<li>이미지의 10% 정도만 숫자 5이기 때문에 5가 아닌 경우로 예측하면 맞출 확률이 90%</li>
+</ul>
+<p>따라서 이 예제는 정확도를 분류기의 성능 측정 지표로 사용하지 않는 이유를 보여줌. 특히 불균형한 데이터셋(어떤 클래스가 다른 것보다 많은 경우)을 다룰 때 더욱 그러함.</p>
+<ul>
+<li>알고리즘이 조금씩 변경되어 결과값 변동이 있을 수 있음.</li>
+<li>무작위성에 의존함.</li>
+<li>연산이 실행되는 순서가 보장되지 않음.</li>
+<li>딕셔너리나 셋은 완벽한 재현이 불가능.</li>
+</ul>
+<h2 id="오차-행렬"><a href="#오차-행렬" class="headerlink" title="오차 행렬"></a>오차 행렬</h2><ul>
+<li>클래스 A의 샘플이 클래스 B로 분류된 횟수를 세는 것</li>
+</ul>
+<p>ex) 분류기가 숫자 5의 이미지를 3으로 잘못 분류한 횟수를 알고 싶다면 오차 행렬의 5행 3열을 참고</p>
+<p>오차 행렬을 만들려면 실제 타겟과 비교할 수 있도록 먼저 예측값을 만들어야 함<br>테스트 세트로 예측을 만들 수 있지만 테스트 세트는 분류기가 출시 준비를 마치고 나서 프로젝트의 맨 마지막에 사용<br>대신 cross_val_predict()함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_predict</span><br><span class="line"></span><br><span class="line">y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>cross_val_predict()함수는 k-겹 교차 검증을 수행하지만 평가 점수를 반환하지 않고 각 테스트 폴드에서 얻은 예측을 반환합니다. 모델이 훈련하는 동안 보지 못 했던 데이터에 대해 예측합니다.</p>
+<p>confusion_matrix()함수를 사용해 오차 행렬 만들기</p>
+<ul>
+<li>타깃 글래스(y_train_5)와 예측 클래스(y_train_pred)를 넣고 호출하기.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> confusion_matrix</span><br><span class="line"></span><br><span class="line">confusion_matrix(y_train_5, y_train_pred)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[53892,   687],
+       [ 1891,  3530]])
+</code></pre>
+<ul>
+<li>행은 실제 클래스</li>
+<li>열은 예측한 클래스</li>
+</ul>
+<p>5가 아닌 이미지를 아닌 것으로 정확하게 분류한 것을 진짜 음성이라고 함.<br>5라고 잘 못 분류한 것을 거짓 양성이라고 함.<br>5 이미지를 5가 아닌 것으로 잘 못 분류한 것을 거짓음성이라고 함.<br>정확히 5라고 분류한 것을 진짜 양성이라고 함.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_train_perfect_predictions = y_train_5 <span class="comment"># 완벽한 분류기일 경우</span></span><br><span class="line">confusion_matrix(y_train_5, y_train_perfect_predictions)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[54579,     0],
+       [    0,  5421]])
+</code></pre>
+<ul>
+<li>분류기의 정밀도</li>
+</ul>
+<p>더 요약된 지표가 필요한 경우 양성 예측의 정확도를 활용</p>
+<p>확실한 양성 샘플 하나만 예측하면 간단히 완벽한 정밀도를 얻을 수 있지만, 이는 분류기가 다른 모든 양성 샘플을 무시하기 때문에 그리 유용하지 않음.<br>정밀도는 재현율이라는 또 다른 지표와 같이 사용하는 것이 일반적.<br>재현율은 분류기가 정확하게 감지한 양성 샘플의 비율로 민감도 또는 진짜 양성 비율이라고도 함.</p>
+<h2 id="정밀도와-재현율"><a href="#정밀도와-재현율" class="headerlink" title="정밀도와 재현율"></a>정밀도와 재현율</h2><p>사이킷런은 정밀도와 재현율을 포함하여 분류기의 지표를 계산하는 여러 함수 제공</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> precision_score, recall_score</span><br><span class="line"></span><br><span class="line">precision_score(y_train_5, y_train_pred)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.8370879772350012
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cm = confusion_matrix(y_train_5, y_train_pred)</span><br><span class="line">cm[<span class="number">1</span>, <span class="number">1</span>] / (cm[<span class="number">0</span>, <span class="number">1</span>] + cm[<span class="number">1</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.8370879772350012
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recall_score(y_train_5, y_train_pred)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.6511713705958311
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cm[<span class="number">1</span>, <span class="number">1</span>] / (cm[<span class="number">1</span>, <span class="number">0</span>] + cm[<span class="number">1</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.6511713705958311
+</code></pre>
+<p>F1 점수 = 정밀도와 재현율의 조화 평균</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> f1_score</span><br><span class="line"></span><br><span class="line">f1_score(y_train_5, y_train_pred)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.7325171197343846
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cm[<span class="number">1</span>, <span class="number">1</span>] / (cm[<span class="number">1</span>, <span class="number">1</span>] + (cm[<span class="number">1</span>, <span class="number">0</span>] + cm[<span class="number">0</span>, <span class="number">1</span>]) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.7325171197343847
+</code></pre>
+<h2 id="정밀도-재현율-트레이드오프"><a href="#정밀도-재현율-트레이드오프" class="headerlink" title="정밀도/재현율 트레이드오프"></a>정밀도/재현율 트레이드오프</h2><p>임곗값을 내리면 재현율이 높아지고 정밀도가 줄어듦</p>
+<p>predict() 메소드 대신 dccision_function()메소드를 호출하면 각 샘플의 점수를 얻을 수 있음 이 점수를 기반으로 원하는 임곗값을 정해 예측을 만들 수 있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_scores = sgd_clf.decision_function([some_digit])</span><br><span class="line">y_scores</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([2164.22030239])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">threshold = <span class="number">0</span></span><br><span class="line">y_some_digit_pred = (y_scores &gt; threshold)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y_some_digit_pred</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([ True])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">threshold = <span class="number">8000</span></span><br><span class="line">y_some_digit_pred = (y_scores &gt; threshold)</span><br><span class="line">y_some_digit_pred</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([False])
+</code></pre>
+<p>이미지가 실제로 숫자 5이고 임곗값이 0일 때는 분류기가 이를 감지했지만, 임곗값을 8천으로 높이면 놓치게 됨</p>
+<p>cross_val_predict()함수를 사용해 훈련 세트에 있는 모든 샘플의 점수를 구해야 함.<br>결정 점수를 반환 받도록 지정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=<span class="number">3</span>,</span><br><span class="line">                             method=<span class="string">&quot;decision_function&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>precision_recall_curve()함수를 사용하여 가능한 모든 임곗값에 대해 정밀도와 재현율 계산 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> precision_recall_curve</span><br><span class="line"></span><br><span class="line">precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)</span><br></pre></td></tr></table></figure>
+
+<p>matplotlib을 이용해 임곗값의 함수로 정밀도와 재현율 그리기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_precision_recall_vs_threshold</span>(<span class="params">precisions, recalls, thresholds</span>):</span></span><br><span class="line">    plt.plot(thresholds, precisions[:-<span class="number">1</span>], <span class="string">&quot;b--&quot;</span>, label=<span class="string">&quot;Precision&quot;</span>, linewidth=<span class="number">2</span>)</span><br><span class="line">    plt.plot(thresholds, recalls[:-<span class="number">1</span>], <span class="string">&quot;g--&quot;</span>, label=<span class="string">&quot;Recall&quot;</span>, linewidth=<span class="number">2</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&quot;center right&quot;</span>, fontsize=<span class="number">16</span>) <span class="comment"># Not shown in the book</span></span><br><span class="line">    plt.xlabel(<span class="string">&quot;Threshold&quot;</span>, fontsize=<span class="number">16</span>)        <span class="comment"># Not shown</span></span><br><span class="line">    plt.grid(<span class="literal">True</span>)                              <span class="comment"># Not shown</span></span><br><span class="line">    plt.axis([-<span class="number">50000</span>, <span class="number">50000</span>, <span class="number">0</span>, <span class="number">1</span>])             <span class="comment"># Not shown</span></span><br><span class="line"></span><br><span class="line">recall_90_precision = recalls[np.argmax(precisions &gt;= <span class="number">0.90</span>)]</span><br><span class="line">threshold_90_precision = thresholds[np.argmax(precisions &gt;= <span class="number">0.90</span>)]</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">plot_precision_recall_vs_threshold(precisions, recalls, thresholds)</span><br><span class="line">plt.plot([-<span class="number">50000</span>, threshold_90_precision], [<span class="number">0.9</span>, <span class="number">0.9</span>], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([-<span class="number">50000</span>, threshold_90_precision], [recall_90_precision, recall_90_precision], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([threshold_90_precision], [<span class="number">0.9</span>], <span class="string">&quot;ro&quot;</span>)</span><br><span class="line">plt.plot([threshold_90_precision], [recall_90_precision], <span class="string">&quot;ro&quot;</span>)</span><br><span class="line">save_fig(<span class="string">&quot;precision_recall_vs_threshold_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: precision_recall_vs_threshold_plot
+</code></pre>
+<p><img src="../image/output_67_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(y_train_pred == (y_scores &gt; <span class="number">0</span>)).<span class="built_in">all</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>True
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_precision_vs_recall</span>(<span class="params">precisions, recalls</span>):</span></span><br><span class="line">    plt.plot(recalls, precisions, <span class="string">&quot;b-&quot;</span>, linewidth=<span class="number">2</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&quot;Recall&quot;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&quot;Precision&quot;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">    plt.axis([<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">    plt.grid(<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line">plot_precision_vs_recall(precisions, recalls)</span><br><span class="line">plt.plot([recall_90_precision, recall_90_precision], [<span class="number">0.</span>, <span class="number">0.9</span>], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([<span class="number">0.0</span>, recall_90_precision], [<span class="number">0.9</span>, <span class="number">0.9</span>], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([recall_90_precision], [<span class="number">0.9</span>], <span class="string">&quot;ro&quot;</span>)</span><br><span class="line">save_fig(<span class="string">&quot;precision_vs_recall_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: precision_vs_recall_plot
+</code></pre>
+<p><img src="../image/output_69_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">threshold_90_precision = thresholds[np.argmax(precisions &gt;= <span class="number">0.90</span>)]</span><br><span class="line">threshold_90_precision</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>3370.0194991439557
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y_train_pred_90 = (y_scores &gt;= threshold_90_precision)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">precision_score(y_train_5, y_train_pred_90)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.9000345901072293
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recall_score(y_train_5, y_train_pred_90)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.4799852425751706
+</code></pre>
+<p>충분히 큰 임곗값을 지정해 정밀도 90%를 달성한 분류기를 만들었으나 재현율이 너무 낮다면 높은 정밀도의 분류기는 의미없음</p>
+<h2 id="ROC-곡선"><a href="#ROC-곡선" class="headerlink" title="ROC 곡선"></a>ROC 곡선</h2><p>거짓 양성 비율(FPR)에 대한 진짜 양성 비율(TPR)의 곡선</p>
+<p>ROC곡선을 그리려면 먼저 roc_curve()함수를 사용해 여러 임곗값에서 TPR과 FPR을 계산 해야 함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve</span><br><span class="line"></span><br><span class="line">fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_roc_curve</span>(<span class="params">fpr, tpr, label=<span class="literal">None</span></span>):</span></span><br><span class="line">    plt.plot(fpr, tpr, linewidth=<span class="number">2</span>, label=label)</span><br><span class="line">    plt.plot([<span class="number">0</span>,<span class="number">1</span>], [<span class="number">0</span>,<span class="number">1</span>], <span class="string">&#x27;k--&#x27;</span>) <span class="comment"># 대각 점선</span></span><br><span class="line">    plt.axis([<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;False Positive Rate (Fall-Out)&#x27;</span>, fontsize=<span class="number">16</span>) <span class="comment"># 축 이름, 그리드 추가</span></span><br><span class="line">    plt.ylabel(<span class="string">&#x27;True Positive Rate (Recall)&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">    plt.grid(<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>))</span><br><span class="line">plot_roc_curve(fpr, tpr)</span><br><span class="line">fpr_90 = fpr[np.argmax(tpr &gt;= recall_90_precision)]</span><br><span class="line">plt.plot([fpr_90, fpr_90], [<span class="number">0.</span>, recall_90_precision], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([<span class="number">0.0</span>, fpr_90], [recall_90_precision, recall_90_precision], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([fpr_90], [recall_90_precision], <span class="string">&quot;ro&quot;</span>)</span><br><span class="line">save_fig(<span class="string">&quot;roc_curve_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: roc_curve_plot
+</code></pre>
+<p><img src="../image/output_77_1.png" alt="png"></p>
+<p>붉은 점이 선택한 비율의 지점(43.68% 재현율)</p>
+<p>재현율이 높을수록 분류기가 만드는 거짓 양성이 늘어남. 점선은 완전한 랜덤 분류기의 ROC 곡선을 뜻함. 좋은 분류기는 이 점선에서 최대한 멀리 떨어져 있어야 함.</p>
+<p>양성 클래스가 드물거나 거짓 음성보다 거짓 양성이 더 중요할 때 PR 곡선 사용 그렇지 않으면 ROC 곡선을 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score</span><br><span class="line"></span><br><span class="line">roc_auc_score(y_train_5, y_scores)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.9604938554008616
+</code></pre>
+<p>predict_proba()메소드는 샘플이 행, 클래스가 열이고 샘플이 주어진 클래스에 속할 확률을 담은 배열을 반환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line">forest_clf = RandomForestClassifier(n_estimators=<span class="number">100</span>, random_state=<span class="number">42</span>)</span><br><span class="line">y_probas_forest = cross_val_predict(forest_clf, X_train, y_train_5, cv=<span class="number">3</span>,</span><br><span class="line">                                    method=<span class="string">&quot;predict_proba&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>roc_curve()함수는 레이블과 점수를 기대함. 점수 대신에 클래스 확률을 전달할 수 있음.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_scores_forest = y_probas_forest[:, <span class="number">1</span>] <span class="comment"># 점수 = 양성 클래스의 확률</span></span><br><span class="line">fpr_forest, tpr_forest, theresholds_forest = roc_curve(y_train_5, y_scores_forest)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">recall_for_forest = tpr_forest[np.argmax(fpr_forest &gt;= fpr_90)]</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">6</span>))</span><br><span class="line">plt.plot(fpr, tpr, <span class="string">&quot;b:&quot;</span>, linewidth=<span class="number">2</span>, label=<span class="string">&quot;SGD&quot;</span>)</span><br><span class="line">plot_roc_curve(fpr_forest, tpr_forest, <span class="string">&quot;Random Forest&quot;</span>)</span><br><span class="line">plt.plot([fpr_90, fpr_90], [<span class="number">0.</span>, recall_90_precision], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([<span class="number">0.0</span>, fpr_90], [recall_90_precision, recall_90_precision], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([fpr_90], [recall_90_precision], <span class="string">&quot;ro&quot;</span>)</span><br><span class="line">plt.plot([fpr_90, fpr_90], [<span class="number">0.</span>, recall_for_forest], <span class="string">&quot;r:&quot;</span>)</span><br><span class="line">plt.plot([fpr_90], [recall_for_forest], <span class="string">&quot;ro&quot;</span>)</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&quot;lower right&quot;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">save_fig(<span class="string">&quot;roc_curve_comparison_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: roc_curve_comparison_plot
+</code></pre>
+<p><img src="../image/output_86_1.png" alt="png"></p>
+<p>ROC 곡선 비교 : 랜덤 포레스트 분류기가 SGD 분류기보다 훨씬 좋습니다. 랜덤 포레스트의 ROC 곡선이 왼쪽 위 모서리에 더 가까워 AUC값이 크기 때문</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roc_auc_score(y_train_5, y_scores_forest)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.9983436731328145
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_train_pred_forest = cross_val_predict(forest_clf, X_train, y_train_5, cv=<span class="number">3</span>)</span><br><span class="line">precision_score(y_train_5, y_train_pred_forest)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.9905083315756169
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recall_score(y_train_5, y_train_pred_forest)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.8662608374838591
+</code></pre>
+<p>99.0% 정밀도와 86.6% 재현율</p>
+<h1 id="다중-분류"><a href="#다중-분류" class="headerlink" title="다중 분류"></a>다중 분류</h1><ul>
+<li><p>Ova, Ovr 전략 : 이미지를 분류할 때 각 분류의 결정 점수 중에서 가장 높은 것을 클래스로 선택</p>
+</li>
+<li><p>OvO 전략 : 1,2 1,3과 같이 각각의 숫자의 조합마다 이진 분류기를 훈련</p>
+</li>
+</ul>
+<p>다중 클래스 분류 작업에 이진 분류 알고리즘을 선택하면 사이킷런이 알고리즘에 따라 자동으로 OvR 또는 OvO를 실행합니다. sklearn.svm.SVC 클래스를 사용해서 서포트 벡터 머신 분류기 테스트</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"></span><br><span class="line">svm_clf = SVC(gamma=<span class="string">&quot;auto&quot;</span>, random_state=<span class="number">42</span>)</span><br><span class="line">svm_clf.fit(X_train[:<span class="number">1000</span>], y_train[:<span class="number">1000</span>])</span><br><span class="line">svm_clf.predict([some_digit])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([5], dtype=uint8)
+</code></pre>
+<p>5를 구별한 타깃 클래스(y_train_5) 대신 0~9까지의 원래 타깃 클래스(y_train)을 사용해 SVC 훈련. 그 다음 예측 하나를 만들고 내부에서는 사이킷런이 OvO 전략을 사용해 45개의 이진 분류기를 훈련시키고 각각의 결정 점수를 얻어 점수가 가장 높은 클래스를 선택</p>
+<p>decision_function()메소드를 호출하면 샘플당 10개의 점수를 반환함. 이 점수는 클래스마다 하나씩임</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">some_digit_scores = svm_clf.decision_function([some_digit])</span><br><span class="line">some_digit_scores</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[ 2.81585438,  7.09167958,  3.82972099,  0.79365551,  5.8885703 ,
+         9.29718395,  1.79862509,  8.10392157, -0.228207  ,  4.83753243]])
+</code></pre>
+<p>가장 높은 점수가 클래스 5에 해당하는 값</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.argmax(some_digit_scores)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>5
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svm_clf.classes_</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8)
+</code></pre>
+<p>분류기가 훈련될 때 classes_ 속성에 타깃 클래스의 리스트를 값으로 정렬하여 저장. 위 예제에서는 classes_ 배열에 있는 각 클래스의 인덱스가 클래스 값 자체와 같음(인덱스 5에 해당하는 클래스의 값은 5) 그러나 이런경우는 드뭄</p>
+<p>사이킷런에서 OvO나 OvR을 사용하도록 강제하려면 OneVsOneClassifier나 OneVsRestClassifier를 사용. 이진 분류기 인스턴스를 만들어 객체를 생성할 때 전달하면 됨. 다음 코드는 SVC기반으로 OvR 전략을 사용하는 다중 분류기를 만듦</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.multiclass <span class="keyword">import</span> OneVsRestClassifier</span><br><span class="line">ovr_clf = OneVsRestClassifier(SVC(gamma=<span class="string">&quot;auto&quot;</span>, random_state=<span class="number">42</span>))</span><br><span class="line">ovr_clf.fit(X_train[:<span class="number">1000</span>], y_train[:<span class="number">1000</span>])</span><br><span class="line">ovr_clf.predict([some_digit])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([5], dtype=uint8)
+</code></pre>
+<p>SGDClassifier(or RandomForestClassifier)를 훈련시키는 것도 간단함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(ovr_clf.estimators_)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>10
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sgd_clf.fit(X_train, y_train)</span><br><span class="line">sgd_clf.predict([some_digit])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([3], dtype=uint8)
+</code></pre>
+<p>이 경우 SGD분류기는 직접 샘플을 다중 클래스로 분류할 수 있기 때문에 별도로 사이킷런의 OvR이나 OvO를 적용할 필요가 없음. decision_function()메소드는 클래스마다 하나의 값을 반환함.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgd_clf.decision_function([some_digit])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[-31893.03095419, -34419.69069632,  -9530.63950739,
+          1823.73154031, -22320.14822878,  -1385.80478895,
+        -26188.91070951, -16147.51323997,  -4604.35491274,
+        -12050.767298  ]])
+</code></pre>
+<p>분류 평가에는 일반적으로 교차 검증을 사용. cross_val_score() 함수를 사용해 SGDClassifier의 정확도를 평가</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cross_val_score(sgd_clf, X_train, y_train, cv=<span class="number">3</span>, scoring=<span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0.87365, 0.85835, 0.8689 ])
+</code></pre>
+<p>모든 테스트 폴드에서 84% 이상을 얻었음. 랜덤 분류기 사용시 10% 정확도를 얻었을 것이므로 성능을 더 높일 여지가 있음. 입력의 스케일을 조정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">scaler = StandardScaler()</span><br><span class="line">X_train_scaled = scaler.fit_transform(X_train.astype(np.float64))</span><br><span class="line">cross_val_score(sgd_clf, X_train_scaled, y_train, cv=<span class="number">3</span>, scoring=<span class="string">&quot;accuracy&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0.8983, 0.891 , 0.9018])
+</code></pre>
+<h1 id="에러-분석"><a href="#에러-분석" class="headerlink" title="에러 분석"></a>에러 분석</h1><p>오차 행렬 살펴보기. cross_val_predict() 함수를 사용해 예측을 만들고 confusion_matrix()함수 호출</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y_train_pred = cross_val_predict(sgd_clf, X_train_scaled, y_train, cv=<span class="number">3</span>)</span><br><span class="line">conf_mx = confusion_matrix(y_train, y_train_pred)</span><br><span class="line">conf_mx</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[5577,    0,   22,    5,    8,   43,   36,    6,  225,    1],
+       [   0, 6400,   37,   24,    4,   44,    4,    7,  212,   10],
+       [  27,   27, 5220,   92,   73,   27,   67,   36,  378,   11],
+       [  22,   17,  117, 5227,    2,  203,   27,   40,  403,   73],
+       [  12,   14,   41,    9, 5182,   12,   34,   27,  347,  164],
+       [  27,   15,   30,  168,   53, 4444,   75,   14,  535,   60],
+       [  30,   15,   42,    3,   44,   97, 5552,    3,  131,    1],
+       [  21,   10,   51,   30,   49,   12,    3, 5684,  195,  210],
+       [  17,   63,   48,   86,    3,  126,   25,   10, 5429,   44],
+       [  25,   18,   30,   64,  118,   36,    1,  179,  371, 5107]])
+</code></pre>
+<p>matplotlib의 matshow()함수를 사용해 이미지로 표현하면 보기 편리할 수 있음</p>
+<p>사이킷런 0.22버전부터는 sklearn.metrics.plot_confusion_matrix()함수를 사용할 수 있습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_confusion_matrix</span>(<span class="params">matrix</span>):</span></span><br><span class="line"></span><br><span class="line">    fig = plt.figure(figsize=(<span class="number">8</span>,<span class="number">8</span>))</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">    cax = ax.matshow(matrix)</span><br><span class="line">    fig.colorbar(cax)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.matshow(conf_mx, cmap=plt.cm.gray)</span><br><span class="line">save_fig(<span class="string">&quot;confusion_matrix_plot&quot;</span>, tight_layout=<span class="literal">False</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: confusion_matrix_plot
+</code></pre>
+<p><img src="../image/output_118_1.png" alt="png"></p>
+<p>데이터셋에 숫자5의 이미지가 적거나 분류기가 숫자 5를 다른 숫자만큼 잘 분류하지 못 함.<br>두 경우의 대하여 확인</p>
+<p>그래프의 에러 부분에 초점을 맞춰 오차 행렬의 각 값을 대응되는 클래스의 이미지 개수로 나누어 에러 비율 비교</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">row_sums = conf_mx.<span class="built_in">sum</span>(axis=<span class="number">1</span>, keepdims=<span class="literal">True</span>)</span><br><span class="line">norm_conf_mx = conf_mx / row_sums</span><br></pre></td></tr></table></figure>
+
+<p>다른 항목은 유지하고 주 대각선만 0으로 채워서 그래프 그리기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">np.fill_diagonal(norm_conf_mx, <span class="number">0</span>)</span><br><span class="line">plt.matshow(norm_conf_mx, cmap=plt.cm.gray)</span><br><span class="line">save_fig(<span class="string">&quot;confusion_matrix_errors_plot&quot;</span>, tight_layout=<span class="literal">False</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: confusion_matrix_errors_plot
+</code></pre>
+<p><img src="../image/output_123_1.png" alt="png"></p>
+<p>행은 실제 클래스를 나타내고 열은 예측한 클래스를 나타냄. 클래스 8의 열이 상당히 밝으므로 많은 이미지가 8로 잘못 분류 되었음을 암시 하지만 클래스 8의 행은 그리 나쁘지 않은 걸로 보아 실제 8이 적절하게 8로 분류되었음 3과 5가 서로 많이 혼동되고 있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cl_a, cl_b = <span class="number">3</span>, <span class="number">5</span></span><br><span class="line">X_aa = X_train[(y_train == cl_a) &amp; (y_train_pred == cl_a)]</span><br><span class="line">X_ab = X_train[(y_train == cl_a) &amp; (y_train_pred == cl_b)]</span><br><span class="line">X_ba = X_train[(y_train == cl_b) &amp; (y_train_pred == cl_a)]</span><br><span class="line">X_bb = X_train[(y_train == cl_b) &amp; (y_train_pred == cl_b)]</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">8</span>))</span><br><span class="line">plt.subplot(<span class="number">221</span>); plot_digits(X_aa[:<span class="number">25</span>], images_per_row=<span class="number">5</span>)</span><br><span class="line">plt.subplot(<span class="number">222</span>); plot_digits(X_ab[:<span class="number">25</span>], images_per_row=<span class="number">5</span>)</span><br><span class="line">plt.subplot(<span class="number">223</span>); plot_digits(X_ba[:<span class="number">25</span>], images_per_row=<span class="number">5</span>)</span><br><span class="line">plt.subplot(<span class="number">224</span>); plot_digits(X_bb[:<span class="number">25</span>], images_per_row=<span class="number">5</span>)</span><br><span class="line">save_fig(<span class="string">&quot;error_analysis_digits_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: error_analysis_digits_plot
+</code></pre>
+<p><img src="../image/output_125_1.png" alt="png"></p>
+<p>원인은 선형 모델인 SGDClassifier를 사용했기 때문이며 선형 분류기는 클래스마다 픽셀에 가중치를 할당하고 새로운 이미지에 대해 단순히 픽셀 강도의 가중치 합을 클래스의 점수로 계산함. 따라서 3과 5는 몇개의 픽셀만 다르기 때문에 모델이 쉽게 혼동함.</p>
+<p>분류기는 이미지의 위치나 회전 방향에 매우 민감함.<br>이 경우에 대해서 에러를 줄이는 방법 중에 하나는 이미지를 중앙에 위치시키고 회전되어 있지 않도록 전처리 하는 것</p>
+<h1 id="다중-레이블-분류"><a href="#다중-레이블-분류" class="headerlink" title="다중 레이블 분류"></a>다중 레이블 분류</h1><p>여러 개의 이진 꼬리표를 출력하는 분류 시스템</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"></span><br><span class="line">y_train_large = (y_train &gt;= <span class="number">7</span>)</span><br><span class="line">y_train_odd = (y_train % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">y_multilabel = np.c_[y_train_large, y_train_odd]</span><br><span class="line"></span><br><span class="line">knn_clf = KNeighborsClassifier()</span><br><span class="line">knn_clf.fit(X_train, y_multilabel)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+                     metric_params=None, n_jobs=None, n_neighbors=5, p=2,
+                     weights=&#39;uniform&#39;)
+</code></pre>
+<p>각 숫자 이미지에 두 개의 타깃 레이블이 담긴 y_multilabel 배열을 만듦. 첫 번째는 숫자가 큰 값(7,8,9)인지 나타내고 두 번째는 홀수인지 나타냄. KNeighborsClassifier 인스턴스를 만들고 다중 타깃 배열을 사용하여 훈련. 이제 예측을 만들면 레이블이 두 개 출력</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knn_clf.predict([some_digit])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[False,  True]])
+</code></pre>
+<p>숫자 5는 크지 않고 홀수.</p>
+<p>모든 레이블에 대한 F1점수의 평균 계산</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_train_knn_pred = cross_val_predict(knn_clf, X_train, y_multilabel, cv=<span class="number">3</span>)</span><br><span class="line">f1_score(y_multilabel, y_train_knn_pred, average=<span class="string">&quot;macro&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0.976410265560605
+</code></pre>
+<p>레이블에 클래스의 지지도를 가중치로 주는 것. 이전 코드에서 average=”weighted”로 설정</p>
+<h1 id="다중-출력-분류"><a href="#다중-출력-분류" class="headerlink" title="다중 출력 분류"></a>다중 출력 분류</h1><p>다중 레이블 분류에서 한 레이블이 다중 클래스가 될 수 있도록 일반화 한 것(값을 두 개 이상 가질 수 있음)</p>
+<p>분류기의 출력이 다중 레이블(픽셀당 한 레이블)이고 각 레이블은 값을 여러개 가짐(0~255)</p>
+<p>분류와 회귀 사이의 경계는 때때로 모호함 픽셀 강도 예측은 분류보다 회귀와 비슷함 다중 출력 시스템이 분류 작업에 국한되지도 않음 그래서 샘플마다 클래스와 값을 모두 포함하는 다중 레이블이 출력되는 시스템도 가능</p>
+<p>MNIST 이미지에서 추출한 훈련 세트와 테스트 세트에 numpy의 randint() 함수를 사용하여 픽셀 강도에 잡음을 추가함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">noise = np.random.randint(<span class="number">0</span>, <span class="number">100</span>, (<span class="built_in">len</span>(X_train), <span class="number">784</span>))</span><br><span class="line">X_train_mod = X_train + noise</span><br><span class="line">noise = np.random.randint(<span class="number">0</span>, <span class="number">100</span>, (<span class="built_in">len</span>(X_test), <span class="number">784</span>))</span><br><span class="line">X_test_mod = X_test + noise</span><br><span class="line">y_train_mod = X_train</span><br><span class="line">y_test_mod = X_test</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">some_index = <span class="number">0</span></span><br><span class="line">plt.subplot(<span class="number">121</span>); plot_digit(X_test_mod[some_index])</span><br><span class="line">plt.subplot(<span class="number">122</span>); plot_digit(X_test_mod[some_index])</span><br><span class="line">save_fig(<span class="string">&quot;noisy_digit_example_plot&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: noisy_digit_example_plot
+</code></pre>
+<p><img src="../image/output_141_1.png" alt="png"></p>
+<p>테스트 세트에서 이미지를 하나 선택하고(테스트 데이터를 들여다 보는 것이 아님) 분류기를 훈련시켜 이 이미지를 깨끗하게 처리함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">knn_clf.fit(X_train_mod, y_train_mod)</span><br><span class="line">clean_digit = knn_clf.predict([X_test_mod[some_index]])</span><br><span class="line">plot_digit(clean_digit)</span><br><span class="line">save_fig(<span class="string">&quot;cleaned_digit_example_plot&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>그림 저장: cleaned_digit_example_plot
+</code></pre>
+<p><img src="../image/output_143_1.png" alt="png"></p>
+<p>분류 작업에서 좋은 측정 지표를 선택, 적절한 정밀도/재현율 트레이드오프를 고르고, 분류기를 비교해야 함.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://kjm94.github.io/2021/04/13/classification/" data-id="cknldj85p000ef4uz4t614znb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Kwon Jung Min"
+        },
+        "headline": "classification",
+        "image": "https://KJM94.github.io../image/output_9_1.png",
+        "keywords": "python",
+        "genre": "",
+        "datePublished": "2021-04-13",
+        "dateCreated": "2021-04-13",
+        "dateModified": "2021-04-17",
+        "url": "https://KJM94.github.io/2021/04/13/classification/",
+        "description": "설정
+matplotlib 그래프를 인라인으로 출력
+그림을 저장하는 함수
+
+12345678910111213141516171819202122232425262728293031323334353637383940# 파이썬 ≥3.5 필수import sysassert sys.version_info &gt;= (3, 5)# 사이킷런 ≥0.20 필수import sklearn",
+        "wordCount": 4255
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/04/16/%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            가설 설정
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/04/08/Feature-Engineering/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Feature Engineering</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/17/%EC%84%B1%EB%8A%A5-%EC%B8%A1%EC%A0%95/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/17/%EC%84%B1%EB%8A%A5-%EC%B8%A1%EC%A0%95/" class="title">성능 측정</a></p>
+                            <p class="item-date"><time datetime="2021-04-17T06:40:38.000Z" itemprop="datePublished">2021-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%EC%9E%90%EB%A3%8C/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%EC%9E%90%EB%A3%8C/" class="title">기초통계 자료</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T07:58:39.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1-%ED%9A%8C%EA%B7%80/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1-%ED%9A%8C%EA%B7%80/" class="title">로지스틱 회귀</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T07:44:44.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/ii%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/ii%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" class="title">회귀분석</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T06:55:45.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/16/%EC%83%81%EA%B4%80%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/16/%EC%83%81%EA%B4%80%EB%B6%84%EC%84%9D/" class="title">상관분석</a></p>
+                            <p class="item-date"><time datetime="2021-04-16T06:51:55.000Z" itemprop="datePublished">2021-04-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Kwon Jung Min</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://kjm94.github.io/2021/04/13/classification/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
