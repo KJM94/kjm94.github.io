@@ -6,16 +6,23 @@
     
 
     
-    <title>Category: Kaggle | This is my Blog</title>
+    <title>OPENCV_fillpoly | This is my Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="This is my Blog">
-<meta property="og:url" content="https://kjm94.github.io/categories/Project/Kaggle/index.html">
+    <meta name="keywords" content="python" />
+    
+    <meta name="description" content="OpenCV를 이용한 다각형 그리기  차선을 따라 그려 나머지 부분은 검은색으로 채우기  1234567891011121314151617181920212223242526272829303132333435363738394041import cv2import numpy as npcapture&#x3D;cv2.VideoCapture(&quot;race.mp4&quot;)tra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OPENCV_fillpoly">
+<meta property="og:url" content="https://kjm94.github.io/2021/07/09/OPENCV-fillpoly/index.html">
 <meta property="og:site_name" content="This is my Blog">
+<meta property="og:description" content="OpenCV를 이용한 다각형 그리기  차선을 따라 그려 나머지 부분은 검은색으로 채우기  1234567891011121314151617181920212223242526272829303132333435363738394041import cv2import numpy as npcapture&#x3D;cv2.VideoCapture(&quot;race.mp4&quot;)tra">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-08T16:00:07.000Z">
+<meta property="article:modified_time" content="2021-07-08T16:01:07.240Z">
 <meta property="article:author" content="Kwon Jung Min">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
     
 
@@ -58,7 +65,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
     <div id="wrap">
@@ -147,81 +154,176 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">Kaggle</em>
+    <a class="page-title-link" href="/categories/Python/">Python</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-OPENCV-fillpoly" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2021" class="archive-year"><i class="icon fa fa-calendar-o"></i>2021</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/05/13/Team-Project-No-1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/59479116/121624599-c9936d80-caac-11eb-9c2f-348edf17cdf7.png)" alt="Team_Project_No.1" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://kjm94.github.io/2021/05/13/Team-Project-No-1/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Project/Kaggle/">Kaggle</a>
-            </div>
-            <div class="date"><time datetime="2021-05-13T00:04:45.000Z" itemprop="datePublished">2021-05-13</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2021/05/13/Team-Project-No-1/">Team_Project_No.1</a>
+        OPENCV_fillpoly
         </h1>
     
 
-        <p class="article-excerpt">
-            Team_project 11. Tabular Playground Series - Apr 2021
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/07/09/OPENCV-fillpoly/" class="article-date">
+       <time datetime="2021-07-08T16:00:07.000Z" itemprop="datePublished">2021-07-09</time>
+    </a>
+  </div>
 
-언어 및 작업툴: Python
-인원: 3명
-기간: 2021.04.19 - 2021.05.01
-내용가공된 타이타닉 생존자 데이터를 사용하여 해당 데이터에 맞는 생존자 예측하기
-기여: pycaret모델 만들기 및 파라미터 모델튜닝
-결과: 1,244팀중 348등(T
-        </p>
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/07/09/OPENCV-fillpoly/" class="article-date">
+     <time datetime="2021-07-08T16:01:07.240Z" itemprop="dateModified">2021-07-09</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
     </div>
-</article>
-    
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>OpenCV를 이용한 다각형 그리기</p>
+<ul>
+<li>차선을 따라 그려 나머지 부분은 검은색으로 채우기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">capture=cv2.VideoCapture(<span class="string">&quot;race.mp4&quot;</span>)</span><br><span class="line">trap_bottom_width=<span class="number">0.9</span></span><br><span class="line">trap_top_width=<span class="number">0.2</span></span><br><span class="line">trap_height=<span class="number">0.3</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> cv2.waitKey(<span class="number">33</span>)&lt;<span class="number">0</span>:</span><br><span class="line">    <span class="keyword">if</span>(capture.get(cv2.CAP_PROP_POS_FRAMES)==capture.get(cv2.CAP_PROP_FRAME_COUNT)):</span><br><span class="line">        capture.<span class="built_in">set</span>(cv2.CAP_PROP_POS_FRAMES,<span class="number">0</span>)</span><br><span class="line">    ret,frame=capture.read()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    img_mask = np.zeros_like(frame)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> frame.ndim &gt; <span class="number">2</span>:</span><br><span class="line">        channel_count = frame.shape[<span class="number">2</span>]</span><br><span class="line">        ignore_mask_color = (<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ignore_mask_color = <span class="number">255</span></span><br><span class="line"></span><br><span class="line">    imshape = frame.shape</span><br><span class="line">    vertices = np.array([[ \</span><br><span class="line">        ((imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_bottom_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>]), \</span><br><span class="line">        ((imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_top_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>] - imshape[<span class="number">0</span>] * trap_height), \</span><br><span class="line">        (imshape[<span class="number">1</span>] - (imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_top_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>] - imshape[<span class="number">0</span>] * trap_height), \</span><br><span class="line">        (imshape[<span class="number">1</span>] - (imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_bottom_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>])]] \</span><br><span class="line">        , dtype=np.int32)</span><br><span class="line"></span><br><span class="line">    cv2.fillPoly(img_mask, vertices, ignore_mask_color)</span><br><span class="line"></span><br><span class="line">    img_load = cv2.bitwise_and(frame, img_mask)</span><br><span class="line">    img_onload=cv2.addWeighted(frame,<span class="number">1.0</span>,img_load,<span class="number">1.0</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">&quot;Video&quot;</span>,img_load)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">capture.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
         </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://kjm94.github.io/2021/07/09/OPENCV-fillpoly/" data-id="ckqv3kkeq00007cuzfe620abm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Kwon Jung Min"
+        },
+        "headline": "OPENCV_fillpoly",
+        "image": "https://KJM94.github.io",
+        "keywords": "python",
+        "genre": "Python",
+        "datePublished": "2021-07-09",
+        "dateCreated": "2021-07-09",
+        "dateModified": "2021-07-09",
+        "url": "https://KJM94.github.io/2021/07/09/OPENCV-fillpoly/",
+        "description": "OpenCV를 이용한 다각형 그리기
+
+차선을 따라 그려 나머지 부분은 검은색으로 채우기
+
+1234567891011121314151617181920212223242526272829303132333435363738394041import cv2import numpy as npcapture=cv2.VideoCapture(&quot;race.mp4&quot;)tra",
+        "wordCount": 328
+    }
+</script>
+
+</article>
+
+    <section id="comments">
     
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
 
-    </div></section>
-
+    
+    </section>
 
 
 
@@ -245,6 +347,19 @@
     </div>
     <div class="github-card" data-github="kjm94" data-width="340" data-height="317" data-theme="medium"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/07/08/OPENCV-color/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">OPENCV_color</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -456,11 +571,13 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://kjm94.github.io/2021/07/09/OPENCV-fillpoly/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
