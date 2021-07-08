@@ -6,26 +6,24 @@
     
 
     
-    <title>R-ggplot No.1 | This is my Blog</title>
+    <title>OPENCV_color | This is my Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="R" />
+    <meta name="keywords" content="python" />
     
-    <meta name="description" content="눈금 표시 방법123456ggplot(PlantGrowth,        aes(x &#x3D; group, y &#x3D; weight)) +  geom_boxplot() +  scale_y_continuous(limits &#x3D; c(0, 10), # 축 범위                     breaks &#x3D; c(1, 3, 5, 7, 9), # 축의 숫자 지정">
+    <meta name="description" content="OpenCV를 활용한 색상검출  하얀색과 주황색 검출하기  123456789101112131415161718192021222324252627282930313233343536import cv2import numpy as npcapture&#x3D;cv2.VideoCapture(&quot;race.mp4&quot;)trap_bottom_width&#x3D;0.9trap_top_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R-ggplot No.1">
-<meta property="og:url" content="https://kjm94.github.io/2021/03/24/R-ggplot/index.html">
+<meta property="og:title" content="OPENCV_color">
+<meta property="og:url" content="https://kjm94.github.io/2021/07/08/OPENCV-color/index.html">
 <meta property="og:site_name" content="This is my Blog">
-<meta property="og:description" content="눈금 표시 방법123456ggplot(PlantGrowth,        aes(x &#x3D; group, y &#x3D; weight)) +  geom_boxplot() +  scale_y_continuous(limits &#x3D; c(0, 10), # 축 범위                     breaks &#x3D; c(1, 3, 5, 7, 9), # 축의 숫자 지정">
+<meta property="og:description" content="OpenCV를 활용한 색상검출  하얀색과 주황색 검출하기  123456789101112131415161718192021222324252627282930313233343536import cv2import numpy as npcapture&#x3D;cv2.VideoCapture(&quot;race.mp4&quot;)trap_bottom_width&#x3D;0.9trap_top_">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://user-images.githubusercontent.com/59479116/121620298-0eb3a180-caa5-11eb-8016-c53d09960339.png">
-<meta property="article:published_time" content="2021-03-24T06:40:25.000Z">
-<meta property="article:modified_time" content="2021-06-22T12:29:15.681Z">
+<meta property="article:published_time" content="2021-07-08T02:36:39.000Z">
+<meta property="article:modified_time" content="2021-07-08T02:40:29.446Z">
 <meta property="article:author" content="Kwon Jung Min">
-<meta property="article:tag" content="R">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/59479116/121620298-0eb3a180-caa5-11eb-8016-c53d09960339.png">
     
 
     
@@ -67,7 +65,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
     <div id="wrap">
@@ -156,19 +154,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/R/">R</a>
+    <a class="page-title-link" href="/categories/Python/">Python</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-R-ggplot" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-OPENCV-color" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        R-ggplot No.1
+        OPENCV_color
         </h1>
     
 
@@ -179,16 +177,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/03/24/R-ggplot/" class="article-date">
-       <time datetime="2021-03-24T06:40:25.000Z" itemprop="datePublished">2021-03-24</time>
+    <a href="/2021/07/08/OPENCV-color/" class="article-date">
+       <time datetime="2021-07-08T02:36:39.000Z" itemprop="datePublished">2021-07-08</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/03/24/R-ggplot/" class="article-date">
-     <time datetime="2021-06-22T12:29:15.681Z" itemprop="dateModified">2021-06-22</time>
+  <a href="/2021/07/08/OPENCV-color/" class="article-date">
+     <time datetime="2021-07-08T02:40:29.446Z" itemprop="dateModified">2021-07-08</time>
   </a>
 </div>
 
@@ -198,7 +196,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/R/" rel="tag">R</a>
+        <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
     </div>
 
                 
@@ -215,11 +213,11 @@
 
             
 
-            <h3 id="눈금-표시-방법"><a href="#눈금-표시-방법" class="headerlink" title="눈금 표시 방법"></a>눈금 표시 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ggplot(PlantGrowth, </span><br><span class="line">       aes(x = group, y = weight)) +</span><br><span class="line">  geom_boxplot() +</span><br><span class="line">  scale_y_continuous(limits = <span class="built_in">c</span>(<span class="number">0</span>, <span class="number">10</span>), <span class="comment"># 축 범위</span></span><br><span class="line">                     breaks = <span class="built_in">c</span>(<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>), <span class="comment"># 축의 숫자 지정</span></span><br><span class="line">                     labels = <span class="built_in">c</span>(<span class="string">&quot;1st&quot;</span>, <span class="string">&quot;three&quot;</span>, <span class="string">&quot;five&quot;</span>, <span class="string">&quot;seven&quot;</span>, <span class="string">&quot;nine&quot;</span>))   </span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/59479116/121620298-0eb3a180-caa5-11eb-8016-c53d09960339.png" alt="834e0eea-c2a5-457f-8db3-5be48606f893"></p>
-<h3 id="범주형-축-항목-순서-변경하기"><a href="#범주형-축-항목-순서-변경하기" class="headerlink" title="범주형 축 항목 순서 변경하기"></a>범주형 축 항목 순서 변경하기</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(PlantGrowth, aes(x = group, weight)) +</span><br><span class="line">  geom_boxplot() +</span><br><span class="line">  theme_bw() +</span><br><span class="line">  scale_x_discrete(limits = <span class="built_in">c</span>(<span class="string">&quot;trt1&quot;</span>, <span class="string">&quot;ctrl&quot;</span>))</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://user-images.githubusercontent.com/59479116/121620331-1c692700-caa5-11eb-8d53-45f8d27e2ff5.png" alt="70048f9e-2d1b-4ae3-9cec-81d31bf5bdcd"></p>
+            <p>OpenCV를 활용한 색상검출</p>
+<ul>
+<li>하얀색과 주황색 검출하기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">capture=cv2.VideoCapture(<span class="string">&quot;race.mp4&quot;</span>)</span><br><span class="line"></span><br><span class="line">trap_bottom_width=<span class="number">0.9</span></span><br><span class="line">trap_top_width=<span class="number">0.2</span></span><br><span class="line">trap_height=<span class="number">0.3</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> cv2.waitKey(<span class="number">33</span>)&lt;<span class="number">0</span>:</span><br><span class="line">    <span class="keyword">if</span>(capture.get(cv2.CAP_PROP_POS_FRAMES)==capture.get(cv2.CAP_PROP_FRAME_COUNT)):</span><br><span class="line">        capture.<span class="built_in">set</span>(cv2.CAP_PROP_POS_FRAMES,<span class="number">0</span>)</span><br><span class="line">    ret,frame=capture.read()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># white 뽑아내기</span></span><br><span class="line">    white_thr = <span class="number">200</span></span><br><span class="line">    lower_white = np.array([white_thr, white_thr, white_thr])</span><br><span class="line">    upper_white = np.array([<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>])</span><br><span class="line">    white_mask = cv2.inRange(frame, lower_white, upper_white)</span><br><span class="line">    white_image = cv2.bitwise_and(frame, frame, mask=white_mask)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># yellow 뽑아내기</span></span><br><span class="line">    img_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)</span><br><span class="line">    lower_yellow = np.array([<span class="number">20</span>, <span class="number">100</span>, <span class="number">100</span>])</span><br><span class="line">    upper_yellow = np.array([<span class="number">40</span>, <span class="number">255</span>, <span class="number">255</span>])</span><br><span class="line">    yellow_mask = cv2.inRange(img_hsv, lower_yellow, upper_yellow)</span><br><span class="line">    yellow_image = cv2.bitwise_and(img_hsv, img_hsv, mask=yellow_mask)</span><br><span class="line"></span><br><span class="line">    mixed_img = cv2.addWeighted(white_image, <span class="number">1.0</span>, yellow_image, <span class="number">1.0</span>, <span class="number">0.0</span>)</span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">&quot;line&quot;</span>, mixed_img)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">capture.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -227,7 +225,7 @@
 
 
 
-    <a data-url="https://kjm94.github.io/2021/03/24/R-ggplot/" data-id="cknsw60ys0008d0uz1ay5ac1z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://kjm94.github.io/2021/07/08/OPENCV-color/" data-id="ckquayyb10000d8uz01iy0jyz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -297,16 +295,20 @@
             "@type": "Person",
             "name": "Kwon Jung Min"
         },
-        "headline": "R-ggplot No.1",
-        "image": "https://KJM94.github.iohttps://user-images.githubusercontent.com/59479116/121620298-0eb3a180-caa5-11eb-8016-c53d09960339.png",
-        "keywords": "R",
-        "genre": "R",
-        "datePublished": "2021-03-24",
-        "dateCreated": "2021-03-24",
-        "dateModified": "2021-06-22",
-        "url": "https://KJM94.github.io/2021/03/24/R-ggplot/",
-        "description": "눈금 표시 방법123456ggplot(PlantGrowth,        aes(x = group, y = weight)) +  geom_boxplot() +  scale_y_continuous(limits = c(0, 10), # 축 범위                     breaks = c(1, 3, 5, 7, 9), # 축의 숫자 지정        ",
-        "wordCount": 175
+        "headline": "OPENCV_color",
+        "image": "https://KJM94.github.io",
+        "keywords": "python",
+        "genre": "Python",
+        "datePublished": "2021-07-08",
+        "dateCreated": "2021-07-08",
+        "dateModified": "2021-07-08",
+        "url": "https://KJM94.github.io/2021/07/08/OPENCV-color/",
+        "description": "OpenCV를 활용한 색상검출
+
+하얀색과 주황색 검출하기
+
+123456789101112131415161718192021222324252627282930313233343536import cv2import numpy as npcapture=cv2.VideoCapture(&quot;race.mp4&quot;)trap_bottom_width=0.9trap_top_",
+        "wordCount": 235
     }
 </script>
 
@@ -349,20 +351,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2021/03/25/Rshiny-setup/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Rshiny setup
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2021/03/23/Random-game-1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/07/07/MATLAB-move/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Random game 1</p>
+        <p class="article-nav-title">MATLAB_move</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -579,7 +571,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://kjm94.github.io/2021/03/24/R-ggplot/';
+    var disqus_url = 'https://kjm94.github.io/2021/07/08/OPENCV-color/';
     
     (function() {
     var dsq = document.createElement('script');
