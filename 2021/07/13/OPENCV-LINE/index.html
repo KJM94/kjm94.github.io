@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>OPENCV-LINE | This is my Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python" />
+    
+    <meta name="description" content="조건에 따른 라인 그리기 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OPENCV-LINE">
+<meta property="og:url" content="https://kjm94.github.io/2021/07/13/OPENCV-LINE/index.html">
+<meta property="og:site_name" content="This is my Blog">
+<meta property="og:description" content="조건에 따른 라인 그리기 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-13T11:50:14.000Z">
+<meta property="article:modified_time" content="2021-07-13T11:50:51.864Z">
+<meta property="article:author" content="Kwon Jung Min">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/icon.png" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">안녕하십니까</p>
+                        </h2>
+
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="//">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Git/">Git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Dacon/">Dacon</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/R/">R</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://public.tableau.com/profile/.75992107#!/">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-OPENCV-LINE" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        OPENCV-LINE
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/07/13/OPENCV-LINE/" class="article-date">
+       <time datetime="2021-07-13T11:50:14.000Z" itemprop="datePublished">2021-07-13</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/07/13/OPENCV-LINE/" class="article-date">
+     <time datetime="2021-07-13T11:50:51.864Z" itemprop="dateModified">2021-07-13</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>조건에 따른 라인 그리기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">trap_bottom_width = <span class="number">0.85</span></span><br><span class="line">trap_top_width = <span class="number">0.075</span></span><br><span class="line">trap_height = <span class="number">0.43</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">region_of_interest</span>(<span class="params">img_src</span>):</span></span><br><span class="line">    img_mask = np.zeros_like(img_src)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> img_src.ndim &gt; <span class="number">2</span>:  <span class="comment"># color영상이면</span></span><br><span class="line">        channel_count = img_src.shape[<span class="number">2</span>]</span><br><span class="line">        ignore_mask_color = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ignore_mask_color = <span class="number">255</span></span><br><span class="line"></span><br><span class="line">    imshape = img_src.shape</span><br><span class="line">    vertices = np.array([[ \</span><br><span class="line">        ((imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_bottom_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>]), \</span><br><span class="line">        ((imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_top_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>] - imshape[<span class="number">0</span>] * trap_height), \</span><br><span class="line">        (imshape[<span class="number">1</span>] - (imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_top_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>] - imshape[<span class="number">0</span>] * trap_height), \</span><br><span class="line">        (imshape[<span class="number">1</span>] - (imshape[<span class="number">1</span>] * (<span class="number">1</span> - trap_bottom_width)) // <span class="number">2</span>, imshape[<span class="number">0</span>])]] \</span><br><span class="line">        , dtype=np.int32)</span><br><span class="line"></span><br><span class="line">    cv2.fillPoly(img_mask, vertices, ignore_mask_color)</span><br><span class="line"></span><br><span class="line">    img_src = cv2.bitwise_and(img_src, img_mask)</span><br><span class="line">    <span class="keyword">return</span> img_src</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_lines</span>(<span class="params">img, lines, color=[<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>], thickness=<span class="number">10</span></span>):</span></span><br><span class="line">    <span class="comment"># In case of error, don&#x27;t draw the line(s)</span></span><br><span class="line">    <span class="keyword">if</span> lines <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(lines) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    draw_right = <span class="literal">True</span></span><br><span class="line">    draw_left = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Find slopes of all lines</span></span><br><span class="line">    <span class="comment"># But only care about lines where abs(slope) &gt; slope_threshold</span></span><br><span class="line">    slope_threshold = <span class="number">0.5</span></span><br><span class="line">    slopes = []</span><br><span class="line">    new_lines = []</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        x1, y1, x2, y2 = line[<span class="number">0</span>]  <span class="comment"># line = [[x1, y1, x2, y2]]</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Calculate slope</span></span><br><span class="line">        <span class="keyword">if</span> x2 - x1 == <span class="number">0.</span>:  <span class="comment"># corner case, avoiding division by 0</span></span><br><span class="line">            slope = <span class="number">999.</span>  <span class="comment"># practically infinite slope</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            slope = (y2 - y1) / (x2 - x1)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Filter lines based on slope</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">abs</span>(slope) &gt; slope_threshold:</span><br><span class="line">            slopes.append(slope)</span><br><span class="line">            new_lines.append(line)</span><br><span class="line"></span><br><span class="line">    lines = new_lines</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Split lines into right_lines and left_lines, representing the right and left lane lines</span></span><br><span class="line">    <span class="comment"># Right/left lane lines must have positive/negative slope, and be on the right/left half of the image</span></span><br><span class="line">    right_lines = []</span><br><span class="line">    left_lines = []</span><br><span class="line">    <span class="keyword">for</span> i, line <span class="keyword">in</span> <span class="built_in">enumerate</span>(lines):</span><br><span class="line">        x1, y1, x2, y2 = line[<span class="number">0</span>]</span><br><span class="line">        img_x_center = img.shape[<span class="number">1</span>] / <span class="number">2</span>  <span class="comment"># x coordinate of center of image</span></span><br><span class="line">        <span class="keyword">if</span> slopes[i] &gt; <span class="number">0</span> <span class="keyword">and</span> x1 &gt; img_x_center <span class="keyword">and</span> x2 &gt; img_x_center:</span><br><span class="line">            right_lines.append(line)</span><br><span class="line">        <span class="keyword">elif</span> slopes[i] &lt; <span class="number">0</span> <span class="keyword">and</span> x1 &lt; img_x_center <span class="keyword">and</span> x2 &lt; img_x_center:</span><br><span class="line">            left_lines.append(line)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run linear regression to find best fit line for right and left lane lines</span></span><br><span class="line">    <span class="comment"># Right lane lines</span></span><br><span class="line">    right_lines_x = []</span><br><span class="line">    right_lines_y = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> right_lines:</span><br><span class="line">        x1, y1, x2, y2 = line[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        right_lines_x.append(x1)</span><br><span class="line">        right_lines_x.append(x2)</span><br><span class="line"></span><br><span class="line">        right_lines_y.append(y1)</span><br><span class="line">        right_lines_y.append(y2)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(right_lines_x) &gt; <span class="number">0</span>:</span><br><span class="line">        right_m, right_b = np.polyfit(right_lines_x, right_lines_y, <span class="number">1</span>)  <span class="comment"># y = m*x + b</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right_m, right_b = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">        draw_right = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Left lane lines</span></span><br><span class="line">    left_lines_x = []</span><br><span class="line">    left_lines_y = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> left_lines:</span><br><span class="line">        x1, y1, x2, y2 = line[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        left_lines_x.append(x1)</span><br><span class="line">        left_lines_x.append(x2)</span><br><span class="line"></span><br><span class="line">        left_lines_y.append(y1)</span><br><span class="line">        left_lines_y.append(y2)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(left_lines_x) &gt; <span class="number">0</span>:</span><br><span class="line">        left_m, left_b = np.polyfit(left_lines_x, left_lines_y, <span class="number">1</span>)  <span class="comment"># y = m*x + b</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        left_m, left_b = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">        draw_left = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Find 2 end points for right and left lines, used for drawing the line</span></span><br><span class="line">    <span class="comment"># y = m*x + b --&gt; x = (y - b)/m</span></span><br><span class="line">    y1 = img.shape[<span class="number">0</span>]</span><br><span class="line">    y2 = img.shape[<span class="number">0</span>] * (<span class="number">1</span> - trap_height)</span><br><span class="line"></span><br><span class="line">    right_x1 = (y1 - right_b) / right_m</span><br><span class="line">    right_x2 = (y2 - right_b) / right_m</span><br><span class="line"></span><br><span class="line">    left_x1 = (y1 - left_b) / left_m</span><br><span class="line">    left_x2 = (y2 - left_b) / left_m</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Convert calculated end points from float to int</span></span><br><span class="line">    y1 = <span class="built_in">int</span>(y1)</span><br><span class="line">    y2 = <span class="built_in">int</span>(y2)</span><br><span class="line">    right_x1 = <span class="built_in">int</span>(right_x1)</span><br><span class="line">    right_x2 = <span class="built_in">int</span>(right_x2)</span><br><span class="line">    left_x1 = <span class="built_in">int</span>(left_x1)</span><br><span class="line">    left_x2 = <span class="built_in">int</span>(left_x2)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Draw the right and left lines on image</span></span><br><span class="line">    <span class="keyword">if</span> draw_right:</span><br><span class="line">        cv2.line(img, (right_x1, y1), (right_x2, y2), color, thickness)</span><br><span class="line">    <span class="keyword">if</span> draw_left:</span><br><span class="line">        cv2.line(img, (left_x1, y1), (left_x2, y2), color, thickness)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#img_src = cv2.imread(&quot;lane_test.png&quot;, cv2.IMREAD_COLOR)</span></span><br><span class="line"></span><br><span class="line">    capture = cv2.VideoCapture(<span class="string">&quot;race.mp4&quot;</span>)  <span class="comment"># 비디오캡쳐(0)을 하면 카메라 1개 연결되어있다는 뜻</span></span><br><span class="line"></span><br><span class="line">    rho = <span class="number">2</span></span><br><span class="line">    theta = <span class="number">1</span> * np.pi / <span class="number">180</span></span><br><span class="line">    threshold = <span class="number">15</span></span><br><span class="line">    min_line_len = <span class="number">10</span></span><br><span class="line">    max_line_gap = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cv2.waitKey(<span class="number">33</span>) &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> (capture.get(cv2.CAP_PROP_POS_FRAMES) == capture.get(cv2.CAP_PROP_FRAME_COUNT)):</span><br><span class="line">            capture.<span class="built_in">set</span>(cv2.CAP_PROP_POS_FRAMES, <span class="number">0</span>)</span><br><span class="line">        ret, frame = capture.read()</span><br><span class="line">        img_gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)</span><br><span class="line">        img_gray = cv2.GaussianBlur(img_gray, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        img_canny = cv2.Canny(img_gray, <span class="number">95</span>, <span class="number">200</span>)</span><br><span class="line">        img_canny = region_of_interest(img_canny)</span><br><span class="line"></span><br><span class="line">        lines = cv2.HoughLinesP(img_canny, rho, theta, threshold, np.array([]), \</span><br><span class="line">                                minLineLength=min_line_len, maxLineGap=max_line_gap)</span><br><span class="line">        <span class="comment"># for i, line in enumerate(lines):</span></span><br><span class="line">        <span class="comment">#      cv2.line(frame, (line[0][0],line[0][1]),(line[0][2],line[0][3]), \</span></span><br><span class="line">        <span class="comment">#               (0,255,0), 2)</span></span><br><span class="line">        img_lines = np.zeros_like(frame)</span><br><span class="line">        draw_lines(img_lines, lines)</span><br><span class="line">        img_dst = cv2.addWeighted(frame, <span class="number">0.8</span>, img_lines, <span class="number">1.0</span>, <span class="number">0.0</span>)</span><br><span class="line"></span><br><span class="line">        cv2.imshow(<span class="string">&quot;frame&quot;</span>,img_dst)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    capture.release()</span><br><span class="line">    cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://kjm94.github.io/2021/07/13/OPENCV-LINE/" data-id="ckr1ztz360000j8uz5qgq4gp7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Kwon Jung Min"
+        },
+        "headline": "OPENCV-LINE",
+        "image": "https://KJM94.github.io",
+        "keywords": "python",
+        "genre": "Python",
+        "datePublished": "2021-07-13",
+        "dateCreated": "2021-07-13",
+        "dateModified": "2021-07-13",
+        "url": "https://KJM94.github.io/2021/07/13/OPENCV-LINE/",
+        "description": "조건에 따른 라인 그리기
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979",
+        "wordCount": 1856
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KJM94" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="kjm94" data-width="340" data-height="317" data-theme="medium"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/07/12/OPENCV-MASK/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">OPENCV-MASK</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/07/13/OPENCV-LINE/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2021/07/13/OPENCV-LINE/" class="title">OPENCV-LINE</a></p>
+                            <p class="item-date"><time datetime="2021-07-13T11:50:14.000Z" itemprop="datePublished">2021-07-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/07/12/OPENCV-MASK/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2021/07/12/OPENCV-MASK/" class="title">OPENCV-MASK</a></p>
+                            <p class="item-date"><time datetime="2021-07-11T15:03:26.000Z" itemprop="datePublished">2021-07-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/07/09/OPENCV-fillpoly/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2021/07/09/OPENCV-fillpoly/" class="title">OPENCV_fillpoly</a></p>
+                            <p class="item-date"><time datetime="2021-07-08T16:00:07.000Z" itemprop="datePublished">2021-07-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/07/08/OPENCV-color/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2021/07/08/OPENCV-color/" class="title">OPENCV_color</a></p>
+                            <p class="item-date"><time datetime="2021-07-08T02:36:39.000Z" itemprop="datePublished">2021-07-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/07/07/MATLAB-move/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2021/07/07/MATLAB-move/" class="title">MATLAB_move</a></p>
+                            <p class="item-date"><time datetime="2021-07-06T17:01:02.000Z" itemprop="datePublished">2021-07-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Dacon/">Dacon</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DL/" rel="tag">DL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Project/" rel="tag">Project</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tool/" rel="tag">Tool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">20</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 16px;">C++</a> <a href="/tags/DL/" style="font-size: 10px;">DL</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Project/" style="font-size: 14px;">Project</a> <a href="/tags/R/" style="font-size: 18px;">R</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/git/" style="font-size: 12px;">git</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Kwon Jung Min</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://kjm94.github.io/2021/07/13/OPENCV-LINE/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
